@@ -2,6 +2,103 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 
+const awardsList = [
+  {
+    name: "Toycathon 2021",
+    org: "Ministry of Women and Child Development, Ministry of Information and Broadcasting, Ministry of Education, Department for Promotion of Industry and Internal Trade, Ministry of Commerce and Industry, Ministry of Micro, Small and Medium Enterprises, Ministry of Textiles, Ministry of Education's Innovation Cell, All India Council for Technical Education (AICTE)",
+    date: "June '21",
+  },
+  {
+    name: "Google Code-In",
+    org: "Google Open Source",
+    date: "December 2, 2019 — January 23, 2020",
+    image:
+      "https://res.cloudinary.com/dxuiu1h8i/image/upload/v1625806346/GCI_2019_Certificate_5797542734856192-1_uieshs.jpg",
+  },
+  {
+    name: "IRIS National Fair",
+    org: "Broadcom, DST, NCSTC, IUSSTF",
+    date: "Jan '20",
+  },
+  {
+    name: "107th Indian Science Congress",
+    org: "NCSTC, DST, Govt. of India",
+    date: "Jan '20",
+  },
+  {
+    shortName: "JNNSMEE",
+    name: "47th Jawaharlal Nehru National Science Mathematics And Environment Exhibition",
+    org: "NCERT, SCERT, Govt. of Chattisgarh",
+    date: "Oct '19",
+  },
+  {
+    name: "CBSE National Science Exhibition",
+    org: "CBSE, New Delhi",
+    date: "Jan '19",
+  },
+  {
+    name: "26th National Children's Science Congress",
+    org: "NCSTC, Department of Science and Technology, Govt. of India",
+    date: "Dec '18",
+  },
+];
+
+const projectList = [
+  {
+    name: "TinDev",
+    link: "http://tindev.swapnadeep.com/",
+    image: "/tindev-small.png",
+    techStack: "React, Node.js, Express.js, MongoDB, Socket.io",
+    desc: "A MERN stack PWA with swiping cards like Tinder to find like-minded developers.",
+  },
+  {
+    name: "DevTube",
+    link: "http://devtube.swapnadeep.com/",
+    image: "/devtube-small.png",
+    techStack: "React, Node.js, Express.js, MongoDB, Firebase Storage",
+    desc: "A MERN stack video streaming app.",
+  },
+  {
+    name: "Mate",
+    link: "https://beta.mate.swapnadeep.com/",
+    image: "/mate-small.png",
+    techStack:
+      "React, Node.js, Express.js, MongoDB, GraphQL, TypeScript, Jest, Mongoose",
+    desc: "A MERN stack dating app.",
+  },
+  {
+    name: "e-Commerce",
+    link: "http://ecom.swapnadeep.com/",
+    image: "/ecom-small.png",
+    techStack: "React, Node.js, Express.js, MongoDB",
+    desc: "A MERN stack PWA with Stripe integration for online gadgets shopping.",
+  },
+  {
+    name: "Pachisi",
+    link: "https://pachisi.swapnadeep.com/",
+    image: "/pachisi-small.png",
+    techStack: "React, TypeScript, Node.js, Express.js, Socket.io",
+    desc: "A game based on popular pachisi game played in Mahabharat. Reviving the forgotten culture of India",
+  },
+  {
+    name: "e-SwachhBin",
+    link: "https://swachhbin.swapnadeep.com/",
+    image: "/swachhbin.jpeg",
+    techStack:
+      "Raspberry Pi, Arduino, React.js, React Native, Express.js, Electron.js, Firebase, OpenCV",
+    desc: "An IoT solution for real-time monitoring of garbage bins with android and web apps for users.",
+  },
+];
+
+const talksList = [{ name: "Getting Started with GraphQL for Frontend Devs" }];
+
+const blogList = [
+  { name: "How to get started with React Routers" },
+  { name: "How I landed a Software Developer job at the age 16" },
+  { name: ".forEach() Polyfill" },
+  { name: ".map() Polyfill" },
+];
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -13,11 +110,46 @@ const Home: NextPage = () => {
         <h2>Hi 👋 I am Swapnadeep Mohapatra! </h2>
         <Prargraph>I&apos;m currently studying in grade 12.</Prargraph>
         <Prargraph>I love to build awesome tech.</Prargraph>
-        <h3>My Awards</h3>
-        {/* TODO: Make Carousel */}
-        <h3>My Projects</h3>
-        <h3>My Talks</h3>
-        <h3>My Blogs</h3>
+        <Awards>
+          <Heading3>My Awards</Heading3>
+          <Carousel>
+            {awardsList.map((award, index) => (
+              <Card key={index}>
+                <Heading4>{award.shortName || award.name}</Heading4>
+              </Card>
+            ))}
+          </Carousel>
+        </Awards>
+        <Awards>
+          <Heading3>My Projects</Heading3>
+          <Carousel>
+            {projectList.map((award, index) => (
+              <Card key={index}>
+                <Heading4>{award.name}</Heading4>
+              </Card>
+            ))}
+          </Carousel>
+        </Awards>
+        <Awards>
+          <Heading3>My Talks</Heading3>
+          <Carousel>
+            {talksList.map((award, index) => (
+              <Card key={index}>
+                <Heading4>{award.name}</Heading4>
+              </Card>
+            ))}
+          </Carousel>
+        </Awards>
+        <Blogs>
+          <Heading3>My Blogs</Heading3>
+          <Carousel>
+            {blogList.map((award, index) => (
+              <Card key={index}>
+                <Heading4>{award.name}</Heading4>
+              </Card>
+            ))}
+          </Carousel>
+        </Blogs>
       </Main>
     </div>
   );
@@ -29,7 +161,71 @@ const Main = styled.div`
   padding: 1rem;
 `;
 
-const Prargraph = styled.div`
+const Prargraph = styled.p`
   font-size: 1.2rem;
   margin: 0.5rem 0rem;
+`;
+
+const Heading3 = styled.h3`
+  font-size: 1.6rem;
+  text-align: center;
+  padding-top: 1rem;
+`;
+
+const Heading4 = styled.h4`
+  font-size: 1rem;
+  text-align: center;
+`;
+
+const Awards = styled.div`
+  height: 300px;
+  background: ${({ theme }) => theme.gradient1};
+`;
+
+const Blogs = styled.div`
+  height: 300px;
+  background: ${({ theme }) => theme.gradient1};
+`;
+
+const Carousel = styled.div`
+  display: flex;
+  overflow-x: scroll;
+  margin: 0rem 2rem;
+
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+`;
+
+const Card = styled.div`
+  min-width: 200px;
+  padding: 2rem;
+  background: ${({ theme }) => theme.body};
+  margin: 1rem;
+  border-radius: 0.5rem;
+  :hover {
+    transform: scale(1.05);
+  }
+  will-change: transform;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter,
+    -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+  cursor: pointer;
 `;

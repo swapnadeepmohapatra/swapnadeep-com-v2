@@ -109,6 +109,8 @@ const Header = styled.header`
   background-color: var(--text);
   align-items: center;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.body};
+  z-index: 1;
 `;
 
 const Nav = styled.nav`

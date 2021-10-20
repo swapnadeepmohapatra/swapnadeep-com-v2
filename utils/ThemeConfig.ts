@@ -8,6 +8,7 @@ type Theme = {
   borderBg: string;
   accent: string;
   blurredBg: string;
+  gradient1: string;
 };
 
 export const lightTheme: Theme = {
@@ -18,6 +19,7 @@ export const lightTheme: Theme = {
   borderBg: "#9b9b9b",
   accent: "#cdf0ea",
   blurredBg: "rgba(255, 255, 255, 0.93)",
+  gradient1: " linear-gradient(to right, #d9cbff, #c8e8fe)",
 };
 
 export const darkTheme: Theme = {
@@ -28,6 +30,8 @@ export const darkTheme: Theme = {
   borderBg: "#5d5d5d",
   accent: "#fbdeac",
   blurredBg: "rgba(15,10,35,0.9);",
+  gradient1: "linear-gradient(to right, #746AFF, #06ACFF)",
+  // gradient1: " linear-gradient(to right, #d9cbff, #c8e8fe)",
 };
 
 export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`

@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-        <div style={{ maxWidth: "650px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "750px", margin: "0 auto" }}>
           <GlobalStyles />
           <Navbar toggleTheme={toggleTheme} theme={theme} />
           <Component {...pageProps} />
