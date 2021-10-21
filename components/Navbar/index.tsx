@@ -7,26 +7,11 @@ import { SvgClose, SvgMenu, SvgSun } from "../../images";
 interface NavbarProps {
   toggleTheme: () => void;
   theme: string;
+  width: any;
 }
 
-export const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
-  const [width, setWidth] = useState(
-    typeof window !== "undefined" && window.innerWidth
-  );
+export const Navbar = ({ toggleTheme, theme, width }: NavbarProps) => {
   const [openDialog, setOpenDialog] = useState(false);
-
-  function handleResize() {
-    if (typeof window !== "undefined") {
-      setWidth(window.innerWidth);
-    }
-  }
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
 
   return (
     <Header>
@@ -51,23 +36,23 @@ export const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
                 about
               </Link>
             </Navitem>
-            <ThemeButton onClick={toggleTheme}>
+            {/* <ThemeButton onClick={toggleTheme}>
               {theme === "light" ? (
                 <SvgSun currentColor="#000" />
               ) : (
                 <SvgMoon currentColor="#fff" />
               )}
-            </ThemeButton>
+            </ThemeButton> */}
           </Fragment>
         ) : (
           <Fragment>
-            <ThemeButton onClick={toggleTheme}>
+            {/* <ThemeButton onClick={toggleTheme}>
               {theme === "light" ? (
                 <SvgSun currentColor="#000" />
               ) : (
                 <SvgMoon currentColor="#fff" />
               )}
-            </ThemeButton>
+            </ThemeButton> */}
             <MenuButton onClick={() => setOpenDialog(!openDialog)}>
               <SvgMenu currentColor={theme === "light" ? "#000" : "#fff"} />
             </MenuButton>

@@ -4,10 +4,26 @@ import { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, GlobalStyles, lightTheme } from "../utils";
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" && window.innerWidth
+  );
+
+  function handleResize() {
+    if (typeof window !== "undefined") {
+      setWidth(window.innerWidth);
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = "en";
@@ -32,11 +48,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-        <div style={{ maxWidth: "750px", margin: "0 auto" }}>
+        <div
+          style={{
+            maxWidth: "750px",
+            margin: "0 auto",
+          }}
+        >
           <GlobalStyles />
-          <Navbar toggleTheme={toggleTheme} theme={theme} />
+          <Navbar toggleTheme={toggleTheme} theme={theme} width={width} />
           <Component {...pageProps} />
         </div>
+        <Footer />
       </ThemeProvider>
     </Fragment>
   );
