@@ -15,6 +15,7 @@ export const Navbar = ({ toggleTheme, theme, width }: NavbarProps) => {
 
   return (
     <Header>
+      <SkipContent href="#mainContent">Skip To Main Content</SkipContent>
       <Link href="/" passHref>
         <h1>Swapnadeep</h1>
       </Link>
@@ -27,13 +28,13 @@ export const Navbar = ({ toggleTheme, theme, width }: NavbarProps) => {
               </Link>
             </Navitem>
             <Navitem>
-              <Link href="/blog" passHref>
-                blog
+              <Link href="/projects" passHref>
+                projects
               </Link>
             </Navitem>
             <Navitem>
-              <Link href="/about" passHref>
-                about
+              <Link href="/awards" passHref>
+                awards
               </Link>
             </Navitem>
             {/* <ThemeButton onClick={toggleTheme}>
@@ -70,13 +71,13 @@ export const Navbar = ({ toggleTheme, theme, width }: NavbarProps) => {
             </Link>
           </Navitem>
           <Navitem>
-            <Link href="/blog" passHref>
-              blog
+            <Link href="/projects" passHref>
+              projects
             </Link>
           </Navitem>
           <Navitem>
-            <Link href="/about" passHref>
-              about
+            <Link href="/awards" passHref>
+              awards
             </Link>
           </Navitem>
         </Dialog>
@@ -170,4 +171,28 @@ const Dialog = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const SkipContent = styled.a`
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  color: white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  border-bottom-right-radius: 8px;
+  background: linear-gradient(to right, #746aff, #06acff);
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 100;
+
+  :focus {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    outline-color: transparent;
+    -webkit-transition: top 0.1s ease-in;
+    transition: top 0.1s ease-in;
+  }
 `;

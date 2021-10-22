@@ -56,7 +56,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           <GlobalStyles />
           <Navbar toggleTheme={toggleTheme} theme={theme} width={width} />
-          <Component {...pageProps} />
+          <div id="mainContent">
+            <Component {...pageProps} />
+          </div>
         </div>
         <Footer />
       </ThemeProvider>
