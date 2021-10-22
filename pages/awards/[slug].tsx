@@ -4,6 +4,7 @@ import styled from "styled-components";
 export async function getServerSideProps(context: any) {
   const res = await fetch(
     `https://v2.swapnadeep.com/api/get-prize/${context.query.slug}`
+    // `http://localhost:3000/api/get-prize/${context.query.slug}`
   );
   const data = await res.json();
 
@@ -27,7 +28,7 @@ function Award({ prize }: { prize: any }) {
         {award.honorIssuer} | {award.honorDate}
       </Heading2>
       <AwardPictures>
-        {images?.map((image, index) => (
+        {images?.map((image: any, index: any) => (
           <AwardPicture key={index} src={image} />
         ))}
       </AwardPictures>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export async function getServerSideProps(context: any) {
   const res = await fetch(
+    // `http://localhost:3000/api/get-project/${context.query.slug}`
     `https://v2.swapnadeep.com/api/get-project/${context.query.slug}`
   );
   const data = await res.json();

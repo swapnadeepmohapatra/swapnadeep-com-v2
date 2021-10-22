@@ -31,11 +31,13 @@ const blogList = [
 export async function getServerSideProps() {
   const prizesResponse = await fetch(
     `https://v2.swapnadeep.com/api/important-prizes`
+    // `http://localhost:3000/api/important-prizes`
   );
   const prizesData = await prizesResponse.json();
 
   const projectsResponse = await fetch(
     `https://v2.swapnadeep.com/api/important-projects`
+    // `http://localhost:3000/api/important-projects`
   );
   const projectsData = await projectsResponse.json();
 
@@ -69,7 +71,7 @@ const Home: NextPage<{ awardsList: any; projectsList: any }> = ({
         <Awards>
           <Heading3>My Awards</Heading3>
           <Carousel>
-            {awardsList.map((award) => (
+            {awardsList.map((award: any) => (
               <AwardLink key={award._id} href={`/awards/${award._id}`}>
                 <AwardCard>
                   <Heading4>
@@ -87,7 +89,7 @@ const Home: NextPage<{ awardsList: any; projectsList: any }> = ({
         <Projects>
           <Heading3>My Projects</Heading3>
           <Carousel>
-            {projectsList.map((award) => (
+            {projectsList.map((award: any) => (
               <ProjectLink key={award._id} href={`projects/${award._id}`}>
                 <CardProject>
                   <ImageCard

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export async function getServerSideProps() {
   const res = await fetch(`https://v2.swapnadeep.com/api/all-prizes`);
+  // const res = await fetch(`http://localhost:3000/api/all-prizes`);
   const data = await res.json();
 
   return {
@@ -16,7 +17,7 @@ const Awards: NextPage = ({ data }: any) => {
     <Main>
       <Heading1>All My Awards</Heading1>
       <AwardGrid>
-        {data?.prizes?.map((award) => (
+        {data?.prizes?.map((award: any) => (
           <Link
             key={award._id}
             href={`awards/${award._id}`}
