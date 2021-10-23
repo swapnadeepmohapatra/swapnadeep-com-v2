@@ -38,7 +38,7 @@ function Footer() {
             >
               <Twitter />
             </Social>
-            <Social href="mailto:swapnadeep456@ggmail.com">
+            <Social href="mailto:swapnadeep456@gmail.com">
               <Mail />
             </Social>
           </div>

@@ -365,9 +365,7 @@ const Card = styled.div`
     transform: scale(1.05);
   }
   will-change: transform;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter,
-    -webkit-backdrop-filter;
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
@@ -383,9 +381,7 @@ const AwardCard = styled.div`
     transform: scale(1.05);
   }
   will-change: transform;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter,
-    -webkit-backdrop-filter;
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
@@ -401,9 +397,7 @@ const TalksCard = styled.div`
     transform: scale(1.05);
   }
   will-change: transform;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter,
-    -webkit-backdrop-filter;
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
@@ -426,9 +420,7 @@ const CardBlog = styled.div`
       transform: scale(1.05);
     }
     will-change: transform;
-    transition-property: background-color, border-color, color, fill, stroke,
-      opacity, box-shadow, transform, filter, backdrop-filter,
-      -webkit-backdrop-filter;
+    transition-property: box-shadow, transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 0.3s;
   }
@@ -450,9 +442,7 @@ const CardProject = styled.div`
       transform: scale(1.05);
     }
     will-change: transform;
-    transition-property: background-color, border-color, color, fill, stroke,
-      opacity, box-shadow, transform, filter, backdrop-filter,
-      -webkit-backdrop-filter;
+    transition-property: box-shadow, transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 0.3s;
   }

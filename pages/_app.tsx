@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     document.documentElement.lang = "en";
     if (typeof window !== "undefined") {
       const newTheme = localStorage.getItem("theme");
-      setTheme(newTheme || "dark");
+      setTheme(newTheme || "light");
     }
   }, []);
 

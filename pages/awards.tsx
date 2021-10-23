@@ -76,9 +76,7 @@ const Award = styled.div`
   // border: 1px solid rgb(0, 174, 255);
   border-radius: 5px;
   will-change: transform;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter,
-    -webkit-backdrop-filter;
+  transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
