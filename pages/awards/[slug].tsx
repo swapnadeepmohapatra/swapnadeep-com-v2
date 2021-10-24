@@ -1,43 +1,111 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { AWARD } from "../../interfaces";
+import { URL } from "../../utils";
 
-export async function getServerSideProps(context: any) {
-  const res = await fetch(
-    `https://v2.swapnadeep.com/api/get-prize/${context.query.slug}`
-    // `http://localhost:3000/api/get-prize/${context.query.slug}`
-  );
-  const data = await res.json();
-
-  return { props: { prize: data.prize } };
+interface AwardProps {
+  slug: string;
 }
 
-function Award({ prize }: { prize: any }) {
-  const award = prize;
+export async function getServerSideProps(context: { query: AwardProps }) {
+  return { props: { slug: context.query.slug } };
+}
+
+function Award({ slug }: AwardProps) {
+  const [award, setAward] = useState<AWARD>({
+    honorDate: "",
+    honorDescription: "",
+    honorIssuer: "",
+    images: [""],
+    important: true,
+    name: "",
+    _id: "",
+  });
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(`${URL}/api/get-prize/${slug}`);
+      const data = await res.json();
+      console.log(data);
+
+      setAward(data.prize);
+    }
+    fetchData();
+  }, [slug]);
 
   const images = award?.images;
 
   const AwardPicture = styled.img`
     width: ${images ? 100 / images?.length - 1 : "100"}%;
     margin-bottom: 1rem;
+
+    min-height: ${300 / images?.length}px;
+
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    transition-duration: 0.8s;
+
+    /* Animation */
+    -webkit-animation-duration: 1.6s;
+    -moz-animation-duration: 1.6s;
+    -o-animation-duration: 1.6s;
+    animation-duration: 1.6s;
+    -webkit-animation-name: pulseAnimation;
+    -moz-animation-name: pulseAnimation;
+    -o-animation-name: pulseAnimation;
+    animation-name: pulseAnimation;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+
+    @keyframes pulseAnimation {
+      0% {
+        background-color: #f1f1f1;
+      }
+
+      25% {
+        background-color: #9c9c9c;
+      }
+
+      50% {
+        background-color: #c1c1c1;
+      }
+
+      70% {
+        background-color: #d8d8d8;
+      }
+    }
   `;
 
   return (
-    <div>
+    <Main>
       <Heading1>{award.name}</Heading1>
       <Heading2>
         {award.honorIssuer} | {award.honorDate}
       </Heading2>
       <AwardPictures>
-        {images?.map((image: any, index: any) => (
+        {images?.map((image: string, index: number) => (
           <AwardPicture key={index} src={image} />
         ))}
       </AwardPictures>
       <AwardDesc>{award.honorDescription}</AwardDesc>
-    </div>
+    </Main>
   );
 }
 
 export default Award;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  padding-bottom: 1rem;
+`;
 
 const Heading1 = styled.h2`
   font-size: 2rem;

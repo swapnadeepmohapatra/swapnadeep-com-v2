@@ -7,10 +7,10 @@ import { SvgClose, SvgMenu, SvgSun } from "../../images";
 interface NavbarProps {
   toggleTheme: () => void;
   theme: string;
-  width: any;
+  width: number;
 }
 
-export const Navbar = ({ toggleTheme, theme, width }: NavbarProps) => {
+export const Navbar = ({ theme, width }: NavbarProps) => {
   const [openDialog, setOpenDialog] = useState(false);
 
   return (

@@ -1,29 +1,43 @@
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
-import Link from "next/link";
+import Head from "next/head";
 import styled from "styled-components";
+import { URL } from "../utils";
+import { AWARD } from "../interfaces";
 
-export async function getServerSideProps() {
-  const res = await fetch(`https://v2.swapnadeep.com/api/all-prizes`);
-  // const res = await fetch(`http://localhost:3000/api/all-prizes`);
-  const data = await res.json();
+const Awards: NextPage = () => {
+  const [data, setData] = useState<AWARD[]>([
+    {
+      honorDate: "",
+      honorDescription: "",
+      honorIssuer: "",
+      images: [""],
+      important: false,
+      name: "",
+      _id: "",
+    },
+  ]);
 
-  return {
-    props: { data },
-  };
-}
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(`${URL}/api/all-prizes`);
+      const data = await res.json();
+      setData(data?.prizes);
+    }
+    fetchData();
+  }, []);
 
-const Awards: NextPage = ({ data }: any) => {
   return (
     <Main>
+      <Head>
+        <title>Awards - Swapnadeep</title>
+        <meta name="description" content="Awards won by Swapnadeep Mohapatra" />
+      </Head>
       <Heading1>All My Awards</Heading1>
+      {data.length < 2 && <Heading1>Getting all the awards...</Heading1>}
       <AwardGrid>
-        {data?.prizes?.map((award: any) => (
-          <Link
-            key={award._id}
-            href={`awards/${award._id}`}
-            passHref
-            replace={false}
-          >
+        {data?.map((award: AWARD) => (
+          <Link key={award._id} href={`awards/${award._id}`}>
             <Award>
               <AwardName>{award.name}</AwardName>
               <AwardDesc>{award.honorIssuer}</AwardDesc>
@@ -34,6 +48,11 @@ const Awards: NextPage = ({ data }: any) => {
     </Main>
   );
 };
+
+const Link = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
 
 const Main = styled.main`
   display: flex;

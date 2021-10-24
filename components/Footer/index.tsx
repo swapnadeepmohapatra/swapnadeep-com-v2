@@ -14,6 +14,7 @@ function Footer() {
               href="https://github.com/swapnadeepmohapatra"
               target="_blank"
               rel="noopener noreferrer"
+              title="Github"
             >
               <Github />
             </Social>
@@ -21,6 +22,7 @@ function Footer() {
               href="https://www.instagram.com/swapnadeep_mohapatra/"
               target="_blank"
               rel="noopener noreferrer"
+              title="Instagram"
             >
               <Instagram />
             </Social>
@@ -28,6 +30,7 @@ function Footer() {
               href="https://www.linkedin.com/in/swapnadeep-mohapatra/"
               target="_blank"
               rel="noopener noreferrer"
+              title="Linkedin"
             >
               <Linkedin />
             </Social>
@@ -35,10 +38,11 @@ function Footer() {
               href="https://twitter.com/swapnadeeptukk"
               target="_blank"
               rel="noopener noreferrer"
+              title="Twitter"
             >
               <Twitter />
             </Social>
-            <Social href="mailto:swapnadeep456@gmail.com">
+            <Social href="mailto:swapnadeep456@gmail.com" title="Email">
               <Mail />
             </Social>
           </div>
