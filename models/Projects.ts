@@ -26,6 +26,9 @@ const projectschema = new mongoose.Schema({
     required: true,
     default: false,
   },
+  shortTechStack: {
+    type: String,
+  },
 });
 
 mongoose.models = {};

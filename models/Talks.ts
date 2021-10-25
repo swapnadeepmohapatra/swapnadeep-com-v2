@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const TalkSchema = new mongoose.Schema({
-  _id: String,
   name: String,
   slides: String,
   recording: String,

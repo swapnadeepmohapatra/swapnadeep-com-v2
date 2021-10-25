@@ -3,35 +3,64 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { AWARD, BLOGS, PROJECT, TALK } from "../interfaces";
+import { AWARD, BLOGS, PROJECT, TALK, WORK } from "../interfaces";
 import { URL } from "../utils";
 
-const Home: NextPage = () => {
-  const [awardsList, setAwardsList] = useState<AWARD[]>([
-    {
-      honorDate: "",
-      honorDescription: "",
-      honorIssuer: "",
-      images: [""],
-      important: true,
-      name: "",
-      _id: "",
-    },
-  ]);
-  const [projectsList, setProjectsList] = useState<PROJECT[]>([
-    {
-      desc: "",
-      image: "",
-      important: false,
-      link: "",
-      name: "",
-      techStack: "",
-      _id: "",
-    },
-  ]);
+export async function getStaticProps() {
+  const prizesResponse = await fetch(`${URL}/api/important-prizes`);
+  const prizesData = await prizesResponse.json();
 
-  const [talksList, setTalksList] = useState<TALK[]>([]);
-  const [blogList, setBlogList] = useState<BLOGS[]>([]);
+  const projectsResponse = await fetch(`${URL}/api/important-projects`);
+  const projectsData = await projectsResponse.json();
+
+  const blogsResponse = await fetch(`${URL}/api/important-blogs`);
+  const blogsData = await blogsResponse.json();
+
+  const talksResponse = await fetch(`${URL}/api/important-talks`);
+  const talksData = await talksResponse.json();
+
+  const worksResponse = await fetch(`${URL}/api/all-works`);
+  const worksData = await worksResponse.json();
+
+  return {
+    props: {
+      staticData: {
+        prizes: prizesData.prizes,
+        projects: projectsData.projects,
+        blogs: blogsData.blogs,
+        talks: talksData.talks,
+        works: worksData.works,
+      },
+    },
+  };
+}
+
+const Home: NextPage<{
+  staticData: {
+    prizes: AWARD[];
+    projects: PROJECT[];
+    blogs: BLOGS[];
+    talks: TALK[];
+    works: WORK[];
+  };
+}> = ({
+  staticData,
+}: {
+  staticData: {
+    prizes: AWARD[];
+    projects: PROJECT[];
+    blogs: BLOGS[];
+    talks: TALK[];
+    works: WORK[];
+  };
+}) => {
+  const [awardsList, setAwardsList] = useState<AWARD[]>(staticData.prizes);
+  const [projectsList, setProjectsList] = useState<PROJECT[]>(
+    staticData.projects
+  );
+  const [talksList, setTalksList] = useState<TALK[]>(staticData.talks);
+  const [blogList, setBlogList] = useState<BLOGS[]>(staticData.blogs);
+  const [workList, setWorkList] = useState(staticData.works);
 
   useEffect(() => {
     async function fetchData() {
@@ -113,19 +142,28 @@ const Home: NextPage = () => {
           <Heading3>My Talks</Heading3>
           <Carousel>
             {talksList.map((talk: TALK) => (
-              <TalksCard key={talk._id}>
-                <Heading4>{talk.name}</Heading4>
-              </TalksCard>
+              <ProjectLink key={talk._id} href={`talks/${talk._id}`}>
+                <TalksCard>
+                  <Heading4>{talk.name}</Heading4>
+                </TalksCard>
+              </ProjectLink>
             ))}
           </Carousel>
-          <BlogButton
-            href="https://dev.to/swapnadeepmohapatra/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            See All Talks
-          </BlogButton>
+          <BlogButton href="/talks">See All Talks</BlogButton>
         </Talks>
+        <Work>
+          <Heading3>Work Experience</Heading3>
+          <Carousel>
+            {workList.map((exp: any) => (
+              <ProjectLink key={exp._id} href={`/work`}>
+                <WorkCard>
+                  <Heading4>{exp.title}</Heading4>
+                </WorkCard>
+              </ProjectLink>
+            ))}
+          </Carousel>
+          <BlogButton href="/work">See All Experiences</BlogButton>
+        </Work>
         <Blogs>
           <Heading3>My Blogs</Heading3>
           <Carousel>
@@ -174,12 +212,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const Main = styled.div`
-  padding: 1rem;
-  @media (max-width: 600px) {
-    padding: 0;
-  }
-`;
+const Main = styled.div``;
 
 const Prargraph = styled.p`
   font-size: 1.2rem;
@@ -222,6 +255,18 @@ const Talks = styled.div`
 
   @media (max-width: 600px) {
     border-radius: 0;
+    height: 25rem;
+  }
+`;
+
+const Work = styled.div`
+  border-radius: 1rem;
+  height: 25rem;
+  background: linear-gradient(to top, #f0faff, #ffffff);
+
+  @media (max-width: 600px) {
+    border-radius: 0;
+    height: 28rem;
   }
 `;
 
@@ -391,6 +436,23 @@ const AwardCard = styled.div`
 `;
 
 const TalksCard = styled.div`
+  min-width: 200px;
+  padding: 2rem;
+  background: ${({ theme }) => theme.body};
+  margin: 1rem;
+  border-radius: 0.5rem;
+  :hover {
+    transform: scale(1.05);
+  }
+  will-change: transform;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+  cursor: pointer;
+  border: 0.1rem solid ${({ theme }) => theme.border};
+`;
+
+const WorkCard = styled.div`
   min-width: 200px;
   padding: 2rem;
   background: ${({ theme }) => theme.body};

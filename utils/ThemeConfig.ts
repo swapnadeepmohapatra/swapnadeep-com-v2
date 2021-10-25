@@ -20,8 +20,8 @@ export const lightTheme: Theme = {
   borderBg: "#9b9b9b",
   accent: "#cdf0ea",
   blurredBg: "rgba(255, 255, 255, 0.93)",
-  gradient1: " linear-gradient(to right, #d9cbff, #c8e8fe)",
-  gradient2: " linear-gradient(to bottom, #f0faff, #ffffff)",
+  gradient1: "linear-gradient(to right, #d9cbff, #c8e8fe)",
+  gradient2: "linear-gradient(to bottom, #f0faff, #ffffff)",
 };
 
 export const darkTheme: Theme = {

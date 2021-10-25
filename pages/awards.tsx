@@ -5,18 +5,23 @@ import styled from "styled-components";
 import { URL } from "../utils";
 import { AWARD } from "../interfaces";
 
-const Awards: NextPage = () => {
-  const [data, setData] = useState<AWARD[]>([
-    {
-      honorDate: "",
-      honorDescription: "",
-      honorIssuer: "",
-      images: [""],
-      important: false,
-      name: "",
-      _id: "",
+export async function getStaticProps() {
+  const res = await fetch(`${URL}/api/all-prizes`);
+  const data = await res.json();
+
+  return {
+    props: {
+      staticData: data.prizes,
     },
-  ]);
+  };
+}
+
+const Awards: NextPage<{ staticData: AWARD[] }> = ({
+  staticData,
+}: {
+  staticData: AWARD[];
+}) => {
+  const [data, setData] = useState<AWARD[]>(staticData);
 
   useEffect(() => {
     async function fetchData() {
@@ -34,7 +39,6 @@ const Awards: NextPage = () => {
         <meta name="description" content="Awards won by Swapnadeep Mohapatra" />
       </Head>
       <Heading1>All My Awards</Heading1>
-      {data.length < 2 && <Heading1>Getting all the awards...</Heading1>}
       <AwardGrid>
         {data?.map((award: AWARD) => (
           <Link key={award._id} href={`awards/${award._id}`}>

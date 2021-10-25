@@ -26,7 +26,6 @@ function Award({ slug }: AwardProps) {
     async function fetchData() {
       const res = await fetch(`${URL}/api/get-prize/${slug}`);
       const data = await res.json();
-      console.log(data);
 
       setAward(data.prize);
     }
@@ -36,7 +35,9 @@ function Award({ slug }: AwardProps) {
   const images = award?.images;
 
   const AwardPicture = styled.img`
-    width: ${images ? 100 / images?.length - 1 : "100"}%;
+    @media (min-width: 600px) {
+      width: ${images ? 100 / images?.length - 1 : "100"}%;
+    }
     margin-bottom: 1rem;
 
     min-height: ${300 / images?.length}px;
@@ -79,6 +80,10 @@ function Award({ slug }: AwardProps) {
       70% {
         background-color: #d8d8d8;
       }
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
   `;
 
@@ -104,7 +109,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 70vh;
-  padding-bottom: 1rem;
+  padding: 1rem;
 `;
 
 const Heading1 = styled.h2`
@@ -126,6 +131,9 @@ const AwardPictures = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem 0rem;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const AwardDesc = styled.p`

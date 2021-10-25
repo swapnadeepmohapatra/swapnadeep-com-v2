@@ -17,7 +17,7 @@ export const Navbar = ({ theme, width }: NavbarProps) => {
     <Header>
       <SkipContent href="#mainContent">Skip To Main Content</SkipContent>
       <Link href="/" passHref>
-        <h1>Swapnadeep</h1>
+        <Heading1>Swapnadeep</Heading1>
       </Link>
       <Nav>
         {width > 600 ? (
@@ -86,6 +86,10 @@ export const Navbar = ({ theme, width }: NavbarProps) => {
   );
 };
 
+const Heading1 = styled.h1`
+  cursor: pointer;
+`;
+
 const Header = styled.header`
   display: flex;
   position: sticky;
@@ -119,6 +123,9 @@ const Navitem = styled.p`
     text-decoration: none;
   }
   padding: 0 0.4rem;
+  @media (max-width: 600px) {
+    padding-left: 2rem;
+  }
 `;
 
 const ThemeButton = styled.button`

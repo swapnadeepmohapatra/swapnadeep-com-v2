@@ -32,26 +32,31 @@ function Project({ slug }: ProjectProps) {
   }, [slug]);
 
   return (
-    <div>
+    <Main>
       <Heading1>{data.name}</Heading1>
       <Heading2>{data.desc}</Heading2>
       <ProjectPictures>
-        <ProjectPicture src={`https://swapnadeep.com${data.image}`} />
+        <ProjectPicture
+          src={`https://swapnadeep.com${data.image}`}
+          alt={`screenshot of ${data.name}`}
+        />
       </ProjectPictures>
       <Heading2>Tech Stack: {data.techStack}</Heading2>
       <Heading2>{data.link}</Heading2>
-      {/* <ProjectDesc>{data.honorDescription}</ProjectDesc> */}
-    </div>
+    </Main>
   );
 }
 
 export default Project;
 
+const Main = styled.main`
+  padding: 1rem;
+`;
+
 const Heading1 = styled.h2`
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
-  margin-top: 1rem;
 `;
 
 const Heading2 = styled.h2`

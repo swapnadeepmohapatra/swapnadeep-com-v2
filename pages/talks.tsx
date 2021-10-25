@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Head from "next/head";
+import { TALK } from "../interfaces";
 import { URL } from "../utils";
-import { PROJECT } from "../interfaces";
+import Head from "next/head";
+import styled from "styled-components";
 
 export async function getStaticProps() {
-  const res = await fetch(`${URL}/api/all-projects`);
+  const res = await fetch(`${URL}/api/all-talks`);
   const data = await res.json();
 
   return {
     props: {
-      staticData: data.projects,
+      staticData: data.talks,
     },
   };
 }
 
-function Projects({ staticData }: { staticData: PROJECT[] }) {
-  const [data, setData] = useState<PROJECT[]>(staticData);
+function Talks({ staticData }: { staticData: TALK[] }) {
+  const [data, setData] = useState<TALK[]>(staticData);
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch(`${URL}/api/all-projects`);
+      const res = await fetch(`${URL}/api/all-talks`);
       const data = await res.json();
-      setData(data?.projects);
+      setData(data?.talks);
     }
     fetchData();
   }, []);
@@ -30,23 +30,20 @@ function Projects({ staticData }: { staticData: PROJECT[] }) {
   return (
     <Main>
       <Head>
-        <title>Projects - Swapnadeep</title>
-        <meta
-          name="description"
-          content="Projects made by Swapnadeep Mohapatra"
-        />
+        <title>Talks - Swapnadeep</title>
+        <meta name="description" content="Talks won by Swapnadeep Mohapatra" />
       </Head>
-      <Heading1>All My Projects</Heading1>
-      <ProjectGrid>
-        {data?.map((project: PROJECT) => (
-          <Link key={project._id} href={`projects/${project._id}`}>
-            <Project>
-              <ProjectName>{project.name}</ProjectName>
-              <ProjectDesc>{project.techStack}</ProjectDesc>
-            </Project>
+      <Heading1>All My Talks</Heading1>
+      <TalkGrid>
+        {data?.map((talk: TALK) => (
+          <Link key={talk._id} href={`talks/${talk._id}`}>
+            <Talk>
+              <TalkName>{talk.name}</TalkName>
+              <TalkDesc>{talk.desc}</TalkDesc>
+            </Talk>
           </Link>
         ))}
-      </ProjectGrid>
+      </TalkGrid>
     </Main>
   );
 }
@@ -71,7 +68,7 @@ const Heading1 = styled.h1`
   text-align: center;
 `;
 
-const ProjectGrid = styled.div`
+const TalkGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
@@ -88,7 +85,7 @@ const ProjectGrid = styled.div`
   }
 `;
 
-const Project = styled.div`
+const Talk = styled.div`
   background: #f0faff;
   display: flex;
   flex-direction: column;
@@ -107,7 +104,7 @@ const Project = styled.div`
   }
 `;
 
-const ProjectName = styled.h2`
+const TalkName = styled.h2`
   font-size: 1rem;
   font-weight: bold;
   margin: 0;
@@ -115,11 +112,11 @@ const ProjectName = styled.h2`
   text-align: center;
 `;
 
-const ProjectDesc = styled.p`
+const TalkDesc = styled.p`
   margin: 0;
   padding: 0;
   text-align: left;
   margin-top: 1rem;
 `;
 
-export default Projects;
+export default Talks;
