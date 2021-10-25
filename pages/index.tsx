@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { AWARD, BLOGS, PROJECT, TALK, WORK } from "../interfaces";
 import { URL } from "../utils";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const prizesResponse = await fetch(`${URL}/api/important-prizes`);
   const prizesData = await prizesResponse.json();
 

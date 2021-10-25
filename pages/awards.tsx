@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { URL } from "../utils";
 import { AWARD } from "../interfaces";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${URL}/api/all-prizes`);
   const data = await res.json();
 
