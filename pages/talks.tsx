@@ -4,7 +4,7 @@ import { URL } from "../utils";
 import Head from "next/head";
 import styled from "styled-components";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${URL}/api/all-talks`);
   const data = await res.json();
 

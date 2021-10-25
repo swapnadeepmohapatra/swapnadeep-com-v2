@@ -4,7 +4,7 @@ import Head from "next/head";
 import { WORK } from "../interfaces";
 import { URL } from "../utils";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${URL}/api/all-works`);
   const data = await res.json();
 
