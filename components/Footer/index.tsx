@@ -2,10 +2,12 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 import { Github, Instagram, Linkedin, Twitter } from "@styled-icons/bootstrap";
 import { Mail } from "@styled-icons/entypo/Mail";
+import { game_log } from "../../utils/Fun";
 
 function Footer() {
   return (
     <_footer>
+      {game_log()}
       <Contact>
         <Fragment>
           Connect with me on

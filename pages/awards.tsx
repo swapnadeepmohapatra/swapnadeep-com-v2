@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
-import { URL } from "../utils";
+import { URL, Bar } from "../utils";
 import { AWARD } from "../interfaces";
 
 export async function getStaticProps() {
@@ -49,6 +49,7 @@ const Awards: NextPage<{ staticData: AWARD[] }> = ({
           </Link>
         ))}
       </AwardGrid>
+      <Bar />
     </Main>
   );
 };

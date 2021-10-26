@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import { WORK } from "../interfaces";
-import { URL } from "../utils";
+import { URL, Foo } from "../utils";
 
 export async function getStaticProps() {
   const res = await fetch(`${URL}/api/all-works`);
@@ -53,6 +53,7 @@ function Work({ staticData }: { staticData: WORK[] }) {
           </EachWork>
         ))}
       </Works>
+      <Foo />
     </Main>
   );
 }
@@ -63,7 +64,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 1rem;
+  padding: 1rem;
 `;
 
 const Heading1 = styled.h1`
@@ -79,15 +80,15 @@ const Works = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
   width: 100%;
+  padding: 1rem 0;
 `;
 
 const EachWork = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  margin: 1rem;
+
+  padding: 2rem 0;
   * {
     margin: 0;
     padding: 0;
