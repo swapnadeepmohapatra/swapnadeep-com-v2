@@ -42,7 +42,9 @@ function Projects({ staticData }: { staticData: PROJECT[] }) {
           <Link key={project._id} href={`projects/${project._id}`}>
             <Project>
               <ProjectName>{project.name}</ProjectName>
-              <ProjectDesc>{project.techStack}</ProjectDesc>
+              <ProjectDesc>
+                {project.shortTechStack || project.techStack}
+              </ProjectDesc>
             </Project>
           </Link>
         ))}

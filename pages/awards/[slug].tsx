@@ -12,15 +12,7 @@ export async function getServerSideProps(context: { query: AwardProps }) {
 }
 
 function Award({ slug }: AwardProps) {
-  const [award, setAward] = useState<AWARD>({
-    honorDate: "",
-    honorDescription: "",
-    honorIssuer: "",
-    images: [""],
-    important: true,
-    name: "",
-    _id: "",
-  });
+  const [award, setAward] = useState<AWARD>();
 
   useEffect(() => {
     async function fetchData() {
@@ -31,6 +23,14 @@ function Award({ slug }: AwardProps) {
     }
     fetchData();
   }, [slug]);
+
+  if (!award) {
+    return (
+      <Main>
+        <Heading1>Loading...</Heading1>
+      </Main>
+    );
+  }
 
   const images = award?.images;
 

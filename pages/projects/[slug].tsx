@@ -12,15 +12,7 @@ export async function getServerSideProps(context: { query: ProjectProps }) {
 }
 
 function Project({ slug }: ProjectProps) {
-  const [data, setData] = useState<PROJECT>({
-    desc: "",
-    image: "",
-    important: false,
-    link: "",
-    name: "",
-    techStack: "",
-    _id: "",
-  });
+  const [data, setData] = useState<PROJECT>();
 
   useEffect(() => {
     async function fetchData() {
@@ -30,6 +22,14 @@ function Project({ slug }: ProjectProps) {
     }
     fetchData();
   }, [slug]);
+
+  if (!data) {
+    return (
+      <Main>
+        <Heading1>Loading...</Heading1>
+      </Main>
+    );
+  }
 
   return (
     <Main>
@@ -41,8 +41,25 @@ function Project({ slug }: ProjectProps) {
           alt={`screenshot of ${data.name}`}
         />
       </ProjectPictures>
-      <Heading2>Tech Stack: {data.techStack}</Heading2>
-      <Heading2>{data.link}</Heading2>
+      <ProjectDesc
+        dangerouslySetInnerHTML={{ __html: data.fullDesc || "" }}
+      ></ProjectDesc>
+      <Heading2>
+        <strong>Tech Stack: </strong>
+        {data.techStack}
+      </Heading2>
+      <Heading2>
+        <strong>Hosted Link: </strong>
+        <ProjectLink href={data.link} target="_blank" rel="noopener noreferrer">
+          {data.link}
+        </ProjectLink>
+      </Heading2>
+      <Heading2>
+        <strong>GitHub Link: </strong>
+        <ProjectLink href={data.link} target="_blank" rel="noopener noreferrer">
+          {data.codeLink || "https://github.com/swapnadeepmohapatra"}
+        </ProjectLink>
+      </Heading2>
     </Main>
   );
 }
@@ -51,6 +68,7 @@ export default Project;
 
 const Main = styled.main`
   padding: 1rem;
+  min-height: 80vh;
 `;
 
 const Heading1 = styled.h2`
@@ -66,6 +84,16 @@ const Heading2 = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
+const ProjectLink = styled.a`
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-decoration: underline dotted;
+  // color: #00a0e9;
+  color: #08abff;
+`;
+
 const ProjectPictures = styled.div`
   display: flex;
   flex-direction: row;
@@ -74,9 +102,9 @@ const ProjectPictures = styled.div`
 `;
 
 const ProjectDesc = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const ProjectPicture = styled.img`

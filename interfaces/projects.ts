@@ -5,5 +5,8 @@ export interface PROJECT {
   link: string;
   name: string;
   techStack: string;
+  shortTechStack?: string;
+  codeLink?: string;
+  fullDesc?: string;
   _id: string;
 }

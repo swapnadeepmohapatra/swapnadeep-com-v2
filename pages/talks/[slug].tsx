@@ -23,18 +23,24 @@ function Talk({ slug }: TalkProps) {
     fetchData();
   }, [slug]);
 
-  if (talk) {
+  if (!talk) {
     return (
       <Main>
-        <Heading1>{talk.name}</Heading1>
-        <Heading2>{/* {talk.honorIssuer} | {talk.honorDate} */}</Heading2>
-        <AwardDesc>{talk.desc}</AwardDesc>
-        <AwardDesc>{talk.slides}</AwardDesc>
+        <Heading1>Loading...</Heading1>
       </Main>
     );
   }
 
-  return <div>Loading...</div>;
+  return (
+    <Main>
+      <Heading1>{talk.name}</Heading1>
+      <TalkDesc>{talk.desc}</TalkDesc>
+      <Heading2>
+        <strong>Slides: </strong>
+        <TalkLink href={talk.slides}>{talk.slides}</TalkLink>
+      </Heading2>
+    </Main>
+  );
 }
 
 const Main = styled.main`
@@ -58,14 +64,13 @@ const Heading2 = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
-const AwardPictures = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1rem 0rem;
+const TalkLink = styled.a`
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 1rem;
 `;
 
-const AwardDesc = styled.p`
+const TalkDesc = styled.p`
   font-size: 1.2rem;
   margin: 0;
   margin-bottom: 1rem;

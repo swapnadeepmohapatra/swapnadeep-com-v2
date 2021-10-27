@@ -9,6 +9,14 @@ const projectschema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  codeLink: {
+    type: String,
+    required: true,
+  },
+  fullDesc: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
