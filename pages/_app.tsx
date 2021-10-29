@@ -97,7 +97,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
+        {/* <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}> */}
+        {/* FIXME: Temp fix for default light theme */}
+        <ThemeProvider theme={"light"}>
           <div
             style={{
               maxWidth: "750px",
