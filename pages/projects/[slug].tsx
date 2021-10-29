@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { PROJECT } from "../../interfaces";
 import { URL } from "../../utils";
+import Head from "next/head";
 
 interface ProjectProps {
   slug: string;
@@ -33,6 +34,13 @@ function Project({ slug }: ProjectProps) {
 
   return (
     <Main>
+      <Head>
+        <title>{data.name} - Swapnadeep</title>
+        <meta
+          name="description"
+          content={`${data.name} made by Swapnadeep Mohapatra`}
+        />
+      </Head>
       <Heading1>{data.name}</Heading1>
       <Heading2>{data.desc}</Heading2>
       <ProjectPictures>

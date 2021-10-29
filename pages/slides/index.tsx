@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
+import styled from "styled-components";
 
 const slides = [
   {
@@ -11,7 +13,11 @@ const slides = [
 
 function Slides() {
   return (
-    <div style={{ minHeight: "70vh" }}>
+    <Main>
+      <Head>
+        <title>Slides - Swapnadeep</title>
+        <meta name="description" content="Slides by Swapnadeep Mohapatra" />
+      </Head>
       <h1>Slides</h1>
       <div>
         <ol>
@@ -24,8 +30,12 @@ function Slides() {
           ))}
         </ol>
       </div>
-    </div>
+    </Main>
   );
 }
 
 export default Slides;
+
+const Main = styled.main`
+  min-height: 70vh;
+`;

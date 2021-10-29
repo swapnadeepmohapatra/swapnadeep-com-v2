@@ -29,11 +29,8 @@ function Work({ staticData }: { staticData: WORK[] }) {
   return (
     <Main>
       <Head>
-        <title>Projects - Swapnadeep</title>
-        <meta
-          name="description"
-          content="Projects made by Swapnadeep Mohapatra"
-        />
+        <title>Work - Swapnadeep</title>
+        <meta name="description" content="Work done by Swapnadeep Mohapatra" />
       </Head>
       <Heading1>Work Experiences</Heading1>
       <Works>

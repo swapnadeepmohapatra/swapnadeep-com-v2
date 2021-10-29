@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TALK } from "../../interfaces";
 import { URL } from "../../utils";
+import Head from "next/head";
 
 interface TalkProps {
   slug: string;
@@ -33,6 +34,13 @@ function Talk({ slug }: TalkProps) {
 
   return (
     <Main>
+      <Head>
+        <title>{talk.name} - Swapnadeep</title>
+        <meta
+          name="description"
+          content={`${talk.name} talk given by Swapnadeep Mohapatra`}
+        />
+      </Head>
       <Heading1>{talk.name}</Heading1>
       <TalkDesc>{talk.desc}</TalkDesc>
       <Heading2>

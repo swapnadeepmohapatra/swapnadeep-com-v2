@@ -31,7 +31,10 @@ function Talks({ staticData }: { staticData: TALK[] }) {
     <Main>
       <Head>
         <title>Talks - Swapnadeep</title>
-        <meta name="description" content="Talks won by Swapnadeep Mohapatra" />
+        <meta
+          name="description"
+          content="Talks given by Swapnadeep Mohapatra"
+        />
       </Head>
       <Heading1>All My Talks</Heading1>
       <TalkGrid>

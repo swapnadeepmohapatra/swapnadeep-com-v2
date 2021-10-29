@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { URL } from "../../utils";
+import { SLIDE } from "../../interfaces/slides";
+import styled from "styled-components";
 
-export async function getServerSideProps(context) {
+interface SlidesProps {
+  slug: string;
+}
+
+export async function getServerSideProps(context: { query: SlidesProps }) {
   return { props: { slug: context.query.slug } };
 }
 
-function SlideItem(props) {
+function SlideItem(props: SlidesProps) {
   const { slug } = props;
-  const [data, setData] = useState();
+  const [data, setData] = useState<SLIDE>();
 
   useEffect(() => {
     async function fetchData() {
@@ -22,10 +28,14 @@ function SlideItem(props) {
   }, [slug]);
 
   return (
-    <div style={{ minHeight: "70vh" }}>
+    <Main>
       <h1>{(data && data.name) || "Error: Slides Not Found"}</h1>
-    </div>
+    </Main>
   );
 }
 
 export default SlideItem;
+
+const Main = styled.main`
+  min-height: 70vh;
+`;

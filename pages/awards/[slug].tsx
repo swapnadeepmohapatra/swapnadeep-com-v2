@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AWARD } from "../../interfaces";
 import { URL } from "../../utils";
+import Head from "next/head";
 
 interface AwardProps {
   slug: string;
@@ -89,6 +90,13 @@ function Award({ slug }: AwardProps) {
 
   return (
     <Main>
+      <Head>
+        <title>{award.name} - Swapnadeep</title>
+        <meta
+          name="description"
+          content={`${award.name} won by Swapnadeep Mohapatra`}
+        />
+      </Head>
       <Heading1>{award.name}</Heading1>
       <Heading2>
         {award.honorIssuer} | {award.honorDate}

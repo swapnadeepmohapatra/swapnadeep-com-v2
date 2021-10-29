@@ -5,6 +5,7 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, GlobalStyles, lightTheme } from "../utils";
 import { Footer, Navbar } from "../components";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState("light");
@@ -74,6 +75,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   } else {
     return (
       <Fragment>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-6FTDS8QC8M"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6FTDS8QC8M');  
+          `}
+        </Script>
         <Head>
           <meta
             name="viewport"
