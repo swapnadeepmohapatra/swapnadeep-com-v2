@@ -29,7 +29,7 @@ function SlideItem(props: SlidesProps) {
 
   return (
     <Main>
-      <h1>{(data && data.name) || "Error: Slides Not Found"}</h1>
+      <h1>{!data ? "Loading..." : data.name || "Error: Slides Not Found"}</h1>
     </Main>
   );
 }
