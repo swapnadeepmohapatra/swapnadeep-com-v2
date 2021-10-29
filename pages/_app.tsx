@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         {/* <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}> */}
         {/* FIXME: Temp fix for default light theme */}
-        <ThemeProvider theme={"light"}>
+        <ThemeProvider theme={lightTheme}>
           <div
             style={{
               width: "100vw",
@@ -99,7 +99,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         {/* <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}> */}
         {/* FIXME: Temp fix for default light theme */}
-        <ThemeProvider theme={"light"}>
+        <ThemeProvider theme={lightTheme}>
           <div
             style={{
               maxWidth: "750px",
