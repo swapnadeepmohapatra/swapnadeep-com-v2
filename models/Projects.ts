@@ -21,6 +21,10 @@ const projectschema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  thumbnail: {
+    type: String,
+    required: false,
+  },
   techStack: {
     type: String,
     required: true,

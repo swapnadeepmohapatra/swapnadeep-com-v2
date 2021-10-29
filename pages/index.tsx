@@ -125,7 +125,7 @@ const Home: NextPage<{
                 <ProjectLink key={project._id} href={`projects/${project._id}`}>
                   <CardProject>
                     <ImageCard
-                      src={`https://swapnadeep.com/${project.image}`}
+                      src={project.thumbnail || project.image}
                       alt={`screenshot of ${project.name} project`}
                       layout="fixed"
                       width="200px"

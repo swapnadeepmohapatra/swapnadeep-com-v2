@@ -8,5 +8,6 @@ export interface PROJECT {
   shortTechStack?: string;
   codeLink?: string;
   fullDesc?: string;
+  thumbnail?: string;
   _id: string;
 }

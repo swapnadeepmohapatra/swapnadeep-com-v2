@@ -36,10 +36,7 @@ function Project({ slug }: ProjectProps) {
       <Heading1>{data.name}</Heading1>
       <Heading2>{data.desc}</Heading2>
       <ProjectPictures>
-        <ProjectPicture
-          src={`https://swapnadeep.com${data.image}`}
-          alt={`screenshot of ${data.name}`}
-        />
+        <ProjectPicture src={data.image} alt={`screenshot of ${data.name}`} />
       </ProjectPictures>
       <ProjectDesc
         dangerouslySetInnerHTML={{ __html: data.fullDesc || "" }}
@@ -60,6 +57,33 @@ function Project({ slug }: ProjectProps) {
           {data.codeLink || "https://github.com/swapnadeepmohapatra"}
         </ProjectLink>
       </Heading2>
+      {data.name === "e-SwachhBin" && (
+        <div>
+          <Heading2>
+            <strong>Tweet: </strong>
+          </Heading2>
+          <blockquote className="twitter-tweet">
+            <p lang="en" dir="ltr">
+              The young bright children showcased their innovation and
+              creativity in scientific projects during the Children Science
+              Congress that was organised as a part of{" "}
+              <a href="https://twitter.com/hashtag/ISC2020?src=hash&amp;ref_src=twsrc%5Etfw">
+                #ISC2020
+              </a>
+              . <a href="https://t.co/yG3DeHmSpp">pic.twitter.com/yG3DeHmSpp</a>
+            </p>
+            &mdash; PIB India (@PIB_India){" "}
+            <a href="https://twitter.com/PIB_India/status/1213380586405892096?ref_src=twsrc%5Etfw">
+              January 4, 2020
+            </a>
+          </blockquote>{" "}
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charSet="utf-8"
+          ></script>
+        </div>
+      )}
     </Main>
   );
 }
