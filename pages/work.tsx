@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Head from "next/head";
 import { WORK } from "../interfaces";
 import { URL, Foo } from "../utils";
+import { Heading1 } from "../components/Heading";
+import { Main } from "../components/Main";
 
 export async function getStaticProps() {
   const res = await fetch(`${URL}/api/all-works`);
@@ -56,21 +58,6 @@ function Work({ staticData }: { staticData: WORK[] }) {
 }
 
 export default Work;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 1rem;
-`;
-
-const Heading1 = styled.h1`
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-`;
 
 const Works = styled.div`
   display: flex;

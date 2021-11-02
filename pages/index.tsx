@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AWARD, BLOGS, PROJECT, TALK, WORK } from "../interfaces";
+import { Carousel, ImageCard, CardLink } from "../components/HomePage";
+import { Heading3, Heading4 } from "../components/Heading";
 import { URL } from "../utils";
 
 export async function getStaticProps() {
@@ -79,6 +81,10 @@ const Home: NextPage<{
       const talksResponse = await fetch(`${URL}/api/important-talks`);
       const talksData = await talksResponse.json();
       setTalksList(talksData.talks);
+
+      const worksResponse = await fetch(`${URL}/api/all-works`);
+      const worksData = await worksResponse.json();
+      setWorkList(worksData.works);
     }
     fetchData();
   }, []);
@@ -103,7 +109,7 @@ const Home: NextPage<{
           <Carousel>
             {awardsList &&
               awardsList.map((award: AWARD) => (
-                <AwardLink key={award._id} href={`/awards/${award._id}`}>
+                <CardLink key={award._id} href={`/awards/${award._id}`}>
                   <AwardCard>
                     <Heading4>
                       {award.name ===
@@ -112,7 +118,7 @@ const Home: NextPage<{
                         : award.name}
                     </Heading4>
                   </AwardCard>
-                </AwardLink>
+                </CardLink>
               ))}
           </Carousel>
           <SecondaryButton href="/awards">See All Awards</SecondaryButton>
@@ -122,7 +128,7 @@ const Home: NextPage<{
           <Carousel>
             {projectsList &&
               projectsList.map((project: PROJECT) => (
-                <ProjectLink key={project._id} href={`projects/${project._id}`}>
+                <CardLink key={project._id} href={`projects/${project._id}`}>
                   <CardProject>
                     <ImageCard
                       src={project.thumbnail || project.image}
@@ -133,7 +139,7 @@ const Home: NextPage<{
                     />
                     <Heading4>{project.name}</Heading4>
                   </CardProject>
-                </ProjectLink>
+                </CardLink>
               ))}
           </Carousel>
           <BlogButton href="/projects">See All Projects</BlogButton>
@@ -142,11 +148,11 @@ const Home: NextPage<{
           <Heading3>My Talks</Heading3>
           <Carousel>
             {talksList.map((talk: TALK) => (
-              <ProjectLink key={talk._id} href={`talks/${talk._id}`}>
+              <CardLink key={talk._id} href={`talks/${talk._id}`}>
                 <TalksCard>
                   <Heading4>{talk.name}</Heading4>
                 </TalksCard>
-              </ProjectLink>
+              </CardLink>
             ))}
           </Carousel>
           <BlogButton href="/talks">See All Talks</BlogButton>
@@ -155,11 +161,11 @@ const Home: NextPage<{
           <Heading3>Work Experience</Heading3>
           <Carousel>
             {workList.map((exp: any) => (
-              <ProjectLink key={exp._id} href={`/work`}>
+              <CardLink key={exp._id} href={`/work`}>
                 <WorkCard>
                   <Heading4>{exp.title}</Heading4>
                 </WorkCard>
-              </ProjectLink>
+              </CardLink>
             ))}
           </Carousel>
           <BlogButton href="/work">See All Experiences</BlogButton>
@@ -168,7 +174,7 @@ const Home: NextPage<{
           <Heading3>My Blogs</Heading3>
           <Carousel>
             {blogList.map((blog: BLOGS) => (
-              <BlogLink
+              <CardLink
                 key={blog._id}
                 href={blog.link}
                 target="_blank"
@@ -184,7 +190,7 @@ const Home: NextPage<{
                   />
                   <Heading4>{blog.name}</Heading4>
                 </CardBlog>
-              </BlogLink>
+              </CardLink>
             ))}
           </Carousel>
           <BlogButton
@@ -217,17 +223,6 @@ const Main = styled.div``;
 const Prargraph = styled.p`
   font-size: 1.2rem;
   margin: 0.5rem 0rem;
-`;
-
-const Heading3 = styled.h3`
-  font-size: 1.6rem;
-  text-align: center;
-  padding-top: 2rem;
-`;
-
-const Heading4 = styled.h4`
-  font-size: 1rem;
-  text-align: center;
 `;
 
 const Awards = styled.div`
@@ -270,49 +265,6 @@ const Work = styled.div`
   }
 `;
 
-const ImageCard = styled(Image)`
-  border-radius: 0.5rem;
-
-  background-color: #f1f1f1;
-  transition-duration: 0.8s;
-
-  /* Animation */
-  -webkit-animation-duration: 1.6s;
-  -moz-animation-duration: 1.6s;
-  -o-animation-duration: 1.6s;
-  animation-duration: 1.6s;
-  -webkit-animation-name: pulseAnimation;
-  -moz-animation-name: pulseAnimation;
-  -o-animation-name: pulseAnimation;
-  animation-name: pulseAnimation;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-  -moz-animation-timing-function: ease-in-out;
-  -o-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-
-  @keyframes pulseAnimation {
-    0% {
-      background-color: #f1f1f1;
-    }
-
-    25% {
-      background-color: #9c9c9c;
-    }
-
-    50% {
-      background-color: #c1c1c1;
-    }
-
-    70% {
-      background-color: #d8d8d8;
-    }
-  }
-`;
-
 const Blogs = styled.div`
   height: 400px;
   background: ${({ theme }) => theme.body};
@@ -320,24 +272,6 @@ const Blogs = styled.div`
   @media (max-width: 600px) {
     border-radius: 0;
   }
-`;
-
-const BlogLink = styled.a`
-  text-decoration: none;
-  color: ${({ theme }) => theme.text};
-  margin: 0.5rem;
-`;
-
-const AwardLink = styled.a`
-  text-decoration: none;
-  color: ${({ theme }) => theme.text};
-  margin: 0.5rem;
-`;
-
-const ProjectLink = styled.a`
-  text-decoration: none;
-  color: ${({ theme }) => theme.text};
-  margin: 0.5rem;
 `;
 
 const BlogButton = styled.a`
@@ -414,31 +348,6 @@ const SecondaryButton = styled.a`
   @media (max-width: 600px) {
     margin: 0.5rem 0;
     text-align: center;
-  }
-`;
-
-const Carousel = styled.div`
-  display: flex;
-  overflow-x: scroll;
-  margin: 0rem 2rem;
-
-  ::-webkit-scrollbar {
-    width: 0.4rem;
-    height: 0.4rem;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 0.4rem;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #999;
-    border-radius: 0.4rem;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #888;
   }
 `;
 

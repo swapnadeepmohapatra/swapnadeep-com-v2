@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styled from "styled-components";
+import { Main } from "../../components/Main";
 
 const slides = [
   {
@@ -35,7 +35,3 @@ function Slides() {
 }
 
 export default Slides;
-
-const Main = styled.main`
-  min-height: 70vh;
-`;

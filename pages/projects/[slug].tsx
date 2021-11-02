@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { PROJECT } from "../../interfaces";
 import { URL } from "../../utils";
+import { Main } from "../../components/Main";
+import { Heading1Left as Heading1, Heading2 } from "../../components/Heading";
 import Head from "next/head";
 
 interface ProjectProps {
@@ -97,24 +99,6 @@ function Project({ slug }: ProjectProps) {
 }
 
 export default Project;
-
-const Main = styled.main`
-  padding: 1rem;
-  min-height: 80vh;
-`;
-
-const Heading1 = styled.h2`
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-`;
-
-const Heading2 = styled.h2`
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin: 0;
-  margin-bottom: 0.5rem;
-`;
 
 const ProjectLink = styled.a`
   font-size: 1.2rem;

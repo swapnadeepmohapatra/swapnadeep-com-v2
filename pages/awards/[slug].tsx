@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AWARD } from "../../interfaces";
+import { Heading1Left as Heading1, Heading2 } from "../../components/Heading";
+import { Main } from "../../components/Main";
 import { URL } from "../../utils";
 import Head from "next/head";
 
@@ -139,27 +141,6 @@ function Award({ slug }: AwardProps) {
 }
 
 export default Award;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 70vh;
-  padding: 1rem;
-`;
-
-const Heading1 = styled.h2`
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  margin-top: 1rem;
-`;
-
-const Heading2 = styled.h2`
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin: 0;
-  margin-bottom: 0.5rem;
-`;
 
 const AwardPictures = styled.div`
   display: flex;

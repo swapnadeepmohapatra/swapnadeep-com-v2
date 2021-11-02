@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Head from "next/head";
 import { URL } from "../../utils";
 import { SLIDE } from "../../interfaces/slides";
-import styled from "styled-components";
+import { Main } from "../../components/Main";
 
 interface SlidesProps {
   slug: string;
@@ -30,12 +29,9 @@ function SlideItem(props: SlidesProps) {
   return (
     <Main>
       <h1>{!data ? "Loading..." : data.name || "Error: Slides Not Found"}</h1>
+      <h1>{!data ? "" : "Redirecting..." || ""}</h1>
     </Main>
   );
 }
 
 export default SlideItem;
-
-const Main = styled.main`
-  min-height: 70vh;
-`;

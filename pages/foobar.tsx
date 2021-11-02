@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Main } from "../components/Main";
 
 function Foobar() {
   return (
@@ -14,14 +15,6 @@ function Foobar() {
 }
 
 export default Foobar;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 1rem;
-`;
 
 const SecretText = styled.span`
   color: #c1c1c1;

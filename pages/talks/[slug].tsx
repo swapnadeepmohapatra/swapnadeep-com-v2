@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { TALK } from "../../interfaces";
 import { URL } from "../../utils";
 import Head from "next/head";
+import { Heading1Left as Heading1, Heading2 } from "../../components/Heading";
+import { Main } from "../../components/Main";
 
 interface TalkProps {
   slug: string;
@@ -50,27 +52,6 @@ function Talk({ slug }: TalkProps) {
     </Main>
   );
 }
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  min-height: 70vh;
-  padding: 1rem;
-`;
-
-const Heading1 = styled.h2`
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  margin-top: 1rem;
-`;
-
-const Heading2 = styled.h2`
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin: 0;
-  margin-bottom: 0.5rem;
-`;
 
 const TalkLink = styled.a`
   font-size: 1.2rem;

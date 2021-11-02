@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
-import styled from "styled-components";
+import { Main } from "../components/Main";
 
 const Custom404: NextPage = () => {
   return (
@@ -16,11 +16,3 @@ const Custom404: NextPage = () => {
 };
 
 export default Custom404;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-`;
