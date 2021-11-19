@@ -99,12 +99,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         {/* <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}> */}
         {/* FIXME: Temp fix for default light theme */}
+        {/* <ThemeProvider theme={darkTheme}> */}
         <ThemeProvider theme={lightTheme}>
           <div
-            style={{
-              maxWidth: "750px",
-              margin: "0 auto",
-            }}
+          // style={{
+          //   maxWidth: " ${({ theme }) => theme.maxWidth}",
+          //   margin: "0 auto",
+          // }}
           >
             <GlobalStyles />
             <Navbar

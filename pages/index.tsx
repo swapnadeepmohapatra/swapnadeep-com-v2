@@ -100,116 +100,138 @@ const Home: NextPage<{
       </Head>
       <Main>
         <PersonalDetail>
-          <h2>Hi 👋 I am Swapnadeep Mohapatra! </h2>
-          <Prargraph>I&apos;m currently studying in grade 12.</Prargraph>
-          <Prargraph>I love to build awesome tech.</Prargraph>
+          <div>
+            <h2>Hi 👋 I am Swapnadeep Mohapatra! </h2>
+            <Prargraph>I&apos;m currently studying in grade 12.</Prargraph>
+            <Prargraph>I love to build awesome tech.</Prargraph>
+          </div>
+          <ProfileImageContainer>
+            <ProfileImage
+              src="/swapnadeep_mohapatra.jpeg"
+              alt="profile_pic"
+              width={"200px"}
+              height={"200px"}
+            />
+          </ProfileImageContainer>
         </PersonalDetail>
         <Awards>
-          <Heading3>My Awards</Heading3>
-          <Carousel>
-            {awardsList &&
-              awardsList.map((award: AWARD) => (
-                <CardLink key={award._id} href={`/awards/${award._id}`}>
-                  <AwardCard>
-                    <Heading4>
-                      {award.name ===
-                      "46th Jawaharlal Nehru National Science Mathematics And Environment Exhibition"
-                        ? "46th JNNSMEE"
-                        : award.name}
-                    </Heading4>
-                  </AwardCard>
-                </CardLink>
-              ))}
-          </Carousel>
-          <SecondaryButton href="/awards">See All Awards</SecondaryButton>
+          <LessWidthDiv>
+            <Heading3>My Awards</Heading3>
+            <Carousel>
+              {awardsList &&
+                awardsList.map((award: AWARD) => (
+                  <CardLink key={award._id} href={`/awards/${award._id}`}>
+                    <AwardCard>
+                      <Heading4>
+                        {award.name ===
+                        "46th Jawaharlal Nehru National Science Mathematics And Environment Exhibition"
+                          ? "46th JNNSMEE"
+                          : award.name}
+                      </Heading4>
+                    </AwardCard>
+                  </CardLink>
+                ))}
+            </Carousel>
+            <SecondaryButton href="/awards">See All Awards</SecondaryButton>
+          </LessWidthDiv>
         </Awards>
         <Projects>
-          <Heading3>My Projects</Heading3>
-          <Carousel>
-            {projectsList &&
-              projectsList.map((project: PROJECT) => (
-                <CardLink key={project._id} href={`projects/${project._id}`}>
-                  <CardProject>
-                    <ImageCard
-                      src={project.thumbnail || project.image}
-                      alt={`screenshot of ${project.name} project`}
-                      layout="fixed"
-                      width="200px"
-                      height="120px"
-                    />
-                    <Heading4>{project.name}</Heading4>
-                  </CardProject>
-                </CardLink>
-              ))}
-          </Carousel>
-          <BlogButton href="/projects">See All Projects</BlogButton>
+          <LessWidthDiv>
+            <Heading3>My Projects</Heading3>
+            <Carousel>
+              {projectsList &&
+                projectsList.map((project: PROJECT) => (
+                  <CardLink key={project._id} href={`projects/${project._id}`}>
+                    <CardProject>
+                      <ImageCard
+                        src={project.thumbnail || project.image}
+                        alt={`screenshot of ${project.name} project`}
+                        layout="fixed"
+                        width="200px"
+                        height="120px"
+                      />
+                      <Heading4>{project.name}</Heading4>
+                    </CardProject>
+                  </CardLink>
+                ))}
+            </Carousel>
+            <BlogButton href="/projects">See All Projects</BlogButton>
+          </LessWidthDiv>
         </Projects>
         <Talks>
-          <Heading3>My Talks</Heading3>
-          <Carousel>
-            {talksList.map((talk: TALK) => (
-              <CardLink key={talk._id} href={`talks/${talk._id}`}>
-                <TalksCard>
-                  <Heading4>{talk.name}</Heading4>
-                </TalksCard>
-              </CardLink>
-            ))}
-          </Carousel>
-          <BlogButton href="/talks">See All Talks</BlogButton>
+          <LessWidthDiv>
+            <Heading3>My Talks</Heading3>
+            <Carousel>
+              {talksList.map((talk: TALK) => (
+                <CardLink key={talk._id} href={`talks/${talk._id}`}>
+                  <TalksCard>
+                    <Heading4>{talk.name}</Heading4>
+                  </TalksCard>
+                </CardLink>
+              ))}
+            </Carousel>
+            <BlogButton href="/talks">See All Talks</BlogButton>
+          </LessWidthDiv>
         </Talks>
         <Work>
-          <Heading3>Work Experience</Heading3>
-          <Carousel>
-            {workList.map((exp: any) => (
-              <CardLink key={exp._id} href={`/work`}>
-                <WorkCard>
-                  <Heading4>{exp.title}</Heading4>
-                </WorkCard>
-              </CardLink>
-            ))}
-          </Carousel>
-          <BlogButton href="/work">See All Experiences</BlogButton>
+          <LessWidthDiv>
+            <Heading3>Work Experience</Heading3>
+            <Carousel>
+              {workList.map((exp: any) => (
+                <CardLink key={exp._id} href={`/work`}>
+                  <WorkCard>
+                    <Heading4>{exp.title}</Heading4>
+                  </WorkCard>
+                </CardLink>
+              ))}
+            </Carousel>
+            <BlogButton href="/work">See All Experiences</BlogButton>
+          </LessWidthDiv>
         </Work>
         <Blogs>
-          <Heading3>My Blogs</Heading3>
-          <Carousel>
-            {blogList.map((blog: BLOGS) => (
-              <CardLink
-                key={blog._id}
-                href={blog.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CardBlog>
-                  <ImageCard
-                    src={blog.pic}
-                    alt={`Thumbnail of ${blog.name} blog`}
-                    layout="fixed"
-                    width="200px"
-                    height="90px"
-                  />
-                  <Heading4>{blog.name}</Heading4>
-                </CardBlog>
-              </CardLink>
-            ))}
-          </Carousel>
-          <BlogButton
-            href="https://dev.to/swapnadeepmohapatra/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            See All Blogs
-          </BlogButton>
+          <LessWidthDiv>
+            <Heading3>My Blogs</Heading3>
+            <Carousel>
+              {blogList.map((blog: BLOGS) => (
+                <CardLink
+                  key={blog._id}
+                  href={blog.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CardBlog>
+                    <ImageCard
+                      src={blog.pic}
+                      alt={`Thumbnail of ${blog.name} blog`}
+                      layout="fixed"
+                      width="200px"
+                      height="90px"
+                    />
+                    <Heading4>{blog.name}</Heading4>
+                  </CardBlog>
+                </CardLink>
+              ))}
+            </Carousel>
+            <BlogButton
+              href="https://dev.to/swapnadeepmohapatra/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See All Blogs
+            </BlogButton>
+          </LessWidthDiv>
         </Blogs>
         <Resume>
-          <Heading3>My Resume</Heading3>
-          <CTAButton
-            href="https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download My Resume
-          </CTAButton>
+          <LessWidthDiv>
+            <Heading3>My Resume</Heading3>
+            <CTAButton
+              href="https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download My Resume
+            </CTAButton>
+          </LessWidthDiv>
         </Resume>
       </Main>
     </div>
@@ -217,6 +239,11 @@ const Home: NextPage<{
 };
 
 export default Home;
+
+const LessWidthDiv = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+`;
 
 const Main = styled.div``;
 
@@ -226,41 +253,33 @@ const Prargraph = styled.p`
 `;
 
 const Awards = styled.div`
-  border-radius: 1rem;
   height: 25rem;
   background: ${({ theme }) => theme.gradient1};
-  @media (max-width: 600px) {
-    border-radius: 0;
-  }
 `;
 
 const Projects = styled.div`
   height: 450px;
   background: ${({ theme }) => theme.body};
 
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.maxWidth}) {
     border-radius: 0;
   }
 `;
 
 const Talks = styled.div`
-  border-radius: 1rem;
   height: 22rem;
   background: ${({ theme }) => theme.gradient2};
 
-  @media (max-width: 600px) {
-    border-radius: 0;
+  @media (max-width: ${({ theme }) => theme.maxWidth}) {
     height: 25rem;
   }
 `;
 
 const Work = styled.div`
-  border-radius: 1rem;
   height: 25rem;
-  background: linear-gradient(to top, #f0faff, #ffffff);
+  background: ${({ theme }) => theme.gradient2inverted};
 
-  @media (max-width: 600px) {
-    border-radius: 0;
+  @media (max-width: ${({ theme }) => theme.maxWidth}) {
     height: 28rem;
   }
 `;
@@ -268,10 +287,6 @@ const Work = styled.div`
 const Blogs = styled.div`
   height: 400px;
   background: ${({ theme }) => theme.body};
-
-  @media (max-width: 600px) {
-    border-radius: 0;
-  }
 `;
 
 const BlogButton = styled.a`
@@ -290,7 +305,7 @@ const BlogButton = styled.a`
   font-weight: bold;
   transition: all 0.2s ease-in-out;
   &:hover {
-    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.5rem ${({ theme }) => theme.shadowColor};
   }
 
   @media (max-width: 600px) {
@@ -305,7 +320,7 @@ const CTAButton = styled.a`
   transform: translate(-50%, 50%);
   text-decoration: none;
   margin: 0.5rem;
-  background: linear-gradient(to right, #746aff, #06acff);
+  background: ${({ theme }) => theme.gradientMain};
   border: none;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
@@ -315,7 +330,7 @@ const CTAButton = styled.a`
   font-weight: bold;
   transition: all 0.2s ease-in-out;
   &:hover {
-    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.5rem ${({ theme }) => theme.shadowColor};
   }
 
   @media (max-width: 600px) {
@@ -332,7 +347,7 @@ const SecondaryButton = styled.a`
   transform: translate(-50%, 50%);
   text-decoration: none;
   margin: 0.5rem;
-  background: #f0faff;
+  background: ${({ theme }) => theme.lightBg};
   border: none;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
@@ -342,7 +357,7 @@ const SecondaryButton = styled.a`
   font-weight: bold;
   transition: all 0.2s ease-in-out;
   &:hover {
-    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.5rem ${({ theme }) => theme.shadowColor};
   }
 
   @media (max-width: 600px) {
@@ -397,7 +412,7 @@ const TalksCard = styled.div`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
-  border: 0.1rem solid ${({ theme }) => theme.border};
+  border: 0.1rem solid ${({ theme }) => theme.borderLight};
 `;
 
 const WorkCard = styled.div`
@@ -414,7 +429,7 @@ const WorkCard = styled.div`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
-  border: 0.1rem solid ${({ theme }) => theme.border};
+  border: 0.1rem solid ${({ theme }) => theme.borderLight};
 `;
 
 const CardBlog = styled.div`
@@ -423,13 +438,12 @@ const CardBlog = styled.div`
   background: ${({ theme }) => theme.body};
   border-radius: 0.5rem;
   cursor: pointer;
-  // border: 0.1rem solid ${({ theme }) => theme.border};
   div {
     border-radius: 0.5rem;
   }
   div {
     :hover {
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.5rem 1rem ${({ theme }) => theme.shadowColor};
       transform: scale(1.05);
     }
     will-change: transform;
@@ -445,13 +459,12 @@ const CardProject = styled.div`
   background: ${({ theme }) => theme.body};
   border-radius: 0.5rem;
   cursor: pointer;
-  // border: 0.1rem solid ${({ theme }) => theme.border};
   div {
     border-radius: 0.5rem;
   }
   div {
     :hover {
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.5rem 1rem ${({ theme }) => theme.shadowColor};
       transform: scale(1.05);
     }
     will-change: transform;
@@ -462,17 +475,42 @@ const CardProject = styled.div`
 `;
 
 const Resume = styled.div`
-  border-radius: 1rem;
   height: 200px;
   padding-bottom: 2rem;
   margin: 3rem 0rem;
-  background: #f0faff;
-
-  @media (max-width: 600px) {
-    border-radius: 0;
-  }
+  background: ${({ theme }) => theme.lightBg};
 `;
 
 const PersonalDetail = styled.div`
   padding: 0rem 1rem;
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+const ProfileImage = styled(Image)`
+  border-radius: 50%;
+`;
+
+const ProfileImageContainer = styled.div`
+  @media (min-width: 600px) {
+    transition: all 0.15s ease-in-out;
+    :hover {
+      transform: translate(10px);
+    }
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 `;

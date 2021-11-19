@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { Main } from "../../components/Main";
+import styled from "styled-components";
 
 const slides = [
   {
@@ -18,20 +19,27 @@ function Slides() {
         <title>Slides - Swapnadeep</title>
         <meta name="description" content="Slides by Swapnadeep Mohapatra" />
       </Head>
-      <h1>Slides</h1>
-      <div>
-        <ol>
-          {slides.map((slide) => (
-            <li key={slide.slug}>
-              <Link href={`slides/${slide.slug}`} passHref>
-                <h2>{slide.name}</h2>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <LessWidthDiv>
+        <h1>Slides</h1>
+        <div>
+          <ol>
+            {slides.map((slide) => (
+              <li key={slide.slug}>
+                <Link href={`slides/${slide.slug}`} passHref>
+                  <h2>{slide.name}</h2>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </LessWidthDiv>
     </Main>
   );
 }
 
 export default Slides;
+
+const LessWidthDiv = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+`;

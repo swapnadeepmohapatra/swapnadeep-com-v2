@@ -66,6 +66,8 @@ const Works = styled.div`
   justify-content: center;
   width: 100%;
   padding: 1rem 0;
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
 `;
 
 const EachWork = styled.div`

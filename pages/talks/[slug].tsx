@@ -43,12 +43,14 @@ function Talk({ slug }: TalkProps) {
           content={`${talk.name} talk given by Swapnadeep Mohapatra`}
         />
       </Head>
-      <Heading1>{talk.name}</Heading1>
-      <TalkDesc>{talk.desc}</TalkDesc>
-      <Heading2>
-        <strong>Slides: </strong>
-        <TalkLink href={talk.slides}>{talk.slides}</TalkLink>
-      </Heading2>
+      <LessWidthDiv>
+        <Heading1>{talk.name}</Heading1>
+        <TalkDesc>{talk.desc}</TalkDesc>
+        <Heading2>
+          <strong>Slides: </strong>
+          <TalkLink href={talk.slides}>{talk.slides}</TalkLink>
+        </Heading2>
+      </LessWidthDiv>
     </Main>
   );
 }
@@ -63,6 +65,11 @@ const TalkDesc = styled.p`
   font-size: 1.2rem;
   margin: 0;
   margin-bottom: 1rem;
+`;
+
+const LessWidthDiv = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
 `;
 
 export default Talk;

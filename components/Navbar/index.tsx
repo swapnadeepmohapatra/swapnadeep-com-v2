@@ -15,13 +15,57 @@ export const Navbar = ({ theme, width }: NavbarProps) => {
 
   return (
     <Header>
-      <SkipContent href="#mainContent">Skip To Main Content</SkipContent>
-      <Link href="/" passHref>
-        <Heading1>Swapnadeep</Heading1>
-      </Link>
-      <Nav>
-        {width > 600 ? (
-          <Fragment>
+      <HeaderBody>
+        <SkipContent href="#mainContent">Skip To Main Content</SkipContent>
+        <Link href="/" passHref>
+          <Heading1>Swapnadeep</Heading1>
+        </Link>
+        <Nav>
+          {width > 600 ? (
+            <Fragment>
+              <Navitem>
+                <Link href="/" passHref>
+                  home
+                </Link>
+              </Navitem>
+              <Navitem>
+                <Link href="/projects" passHref>
+                  projects
+                </Link>
+              </Navitem>
+              <Navitem>
+                <Link href="/awards" passHref>
+                  awards
+                </Link>
+              </Navitem>
+              {/* <ThemeButton onClick={toggleTheme}>
+              {theme === "light" ? (
+                <SvgSun currentColor="#000" />
+                ) : (
+                  <SvgMoon currentColor="#fff" />
+                  )}
+                </ThemeButton> */}
+            </Fragment>
+          ) : (
+            <Fragment>
+              {/* <ThemeButton onClick={toggleTheme}>
+              {theme === "light" ? (
+                <SvgSun currentColor="#000" />
+                ) : (
+                  <SvgMoon currentColor="#fff" />
+                  )}
+                </ThemeButton> */}
+              <MenuButton onClick={() => setOpenDialog(!openDialog)}>
+                <SvgMenu currentColor={theme === "light" ? "#000" : "#fff"} />
+              </MenuButton>
+            </Fragment>
+          )}
+        </Nav>
+        {openDialog && (
+          <Dialog onClick={() => setOpenDialog(!openDialog)}>
+            <ButtonClose onClick={() => setOpenDialog(!openDialog)}>
+              <SvgClose />
+            </ButtonClose>
             <Navitem>
               <Link href="/" passHref>
                 home
@@ -37,51 +81,9 @@ export const Navbar = ({ theme, width }: NavbarProps) => {
                 awards
               </Link>
             </Navitem>
-            {/* <ThemeButton onClick={toggleTheme}>
-              {theme === "light" ? (
-                <SvgSun currentColor="#000" />
-              ) : (
-                <SvgMoon currentColor="#fff" />
-              )}
-            </ThemeButton> */}
-          </Fragment>
-        ) : (
-          <Fragment>
-            {/* <ThemeButton onClick={toggleTheme}>
-              {theme === "light" ? (
-                <SvgSun currentColor="#000" />
-              ) : (
-                <SvgMoon currentColor="#fff" />
-              )}
-            </ThemeButton> */}
-            <MenuButton onClick={() => setOpenDialog(!openDialog)}>
-              <SvgMenu currentColor={theme === "light" ? "#000" : "#fff"} />
-            </MenuButton>
-          </Fragment>
+          </Dialog>
         )}
-      </Nav>
-      {openDialog && (
-        <Dialog onClick={() => setOpenDialog(!openDialog)}>
-          <ButtonClose onClick={() => setOpenDialog(!openDialog)}>
-            <SvgClose />
-          </ButtonClose>
-          <Navitem>
-            <Link href="/" passHref>
-              home
-            </Link>
-          </Navitem>
-          <Navitem>
-            <Link href="/projects" passHref>
-              projects
-            </Link>
-          </Navitem>
-          <Navitem>
-            <Link href="/awards" passHref>
-              awards
-            </Link>
-          </Navitem>
-        </Dialog>
-      )}
+      </HeaderBody>
     </Header>
   );
 };
@@ -90,7 +92,7 @@ const Heading1 = styled.h1`
   cursor: pointer;
 `;
 
-const Header = styled.header`
+const HeaderBody = styled.div`
   display: flex;
   position: sticky;
   top: 0;
@@ -101,6 +103,26 @@ const Header = styled.header`
   justify-content: space-between;
   background-color: ${({ theme }) => theme.body};
   z-index: 1;
+  width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+  @media (max-width: ${({ theme }) => theme.maxWidth}) {
+    width: calc(100% - 2rem);
+  }
+`;
+
+const Header = styled.header`
+  display: flex;
+  position: sticky;
+  top: 0;
+  height: calc(40px + 2rem);
+  background-color: var(--text);
+  align-items: center;
+  justify-content: space-between;
+  background-color: ${({ theme }) => theme.body};
+  z-index: 1;
+  @media (max-width: ${({ theme }) => theme.maxWidth}) {
+    display: block;
+  }
 `;
 
 const Nav = styled.nav`
@@ -189,7 +211,7 @@ const SkipContent = styled.a`
   border-right: 1px solid white;
   border-bottom: 1px solid white;
   border-bottom-right-radius: 8px;
-  background: linear-gradient(to right, #746aff, #06acff);
+  background: ${({ theme }) => theme.gradient1};
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 100;

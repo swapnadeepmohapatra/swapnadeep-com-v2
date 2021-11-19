@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { URL } from "../../utils";
 import { SLIDE } from "../../interfaces/slides";
 import { Main } from "../../components/Main";
+import styled from "styled-components";
 
 interface SlidesProps {
   slug: string;
@@ -28,10 +29,17 @@ function SlideItem(props: SlidesProps) {
 
   return (
     <Main>
-      <h1>{!data ? "Loading..." : data.name || "Error: Slides Not Found"}</h1>
-      <h1>{!data ? "" : "Redirecting..." || ""}</h1>
+      <LessWidthDiv>
+        <h1>{!data ? "Loading..." : data.name || "Error: Slides Not Found"}</h1>
+        <h1>{!data ? "" : "Redirecting..." || ""}</h1>
+      </LessWidthDiv>
     </Main>
   );
 }
 
 export default SlideItem;
+
+const LessWidthDiv = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+`;

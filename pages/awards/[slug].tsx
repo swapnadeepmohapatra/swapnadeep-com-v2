@@ -99,43 +99,46 @@ function Award({ slug }: AwardProps) {
           content={`${award.name} won by Swapnadeep Mohapatra`}
         />
       </Head>
-      <Heading1>{award.name}</Heading1>
-      <Heading2>
-        {award.honorIssuer} | {award.honorDate}
-      </Heading2>
-      <AwardPictures>
-        {images?.map((image: string, index: number) => (
-          <AwardPicture key={index} src={image} />
-        ))}
-      </AwardPictures>
-      <AwardDesc>{award.honorDescription}</AwardDesc>
-      {award.name === "107th Indian Science Congress" && (
-        <div>
-          <Heading2>
-            <strong>Tweet: </strong>
-          </Heading2>
-          <blockquote className="twitter-tweet">
-            <p lang="en" dir="ltr">
-              The young bright children showcased their innovation and
-              creativity in scientific projects during the Children Science
-              Congress that was organised as a part of{" "}
-              <a href="https://twitter.com/hashtag/ISC2020?src=hash&amp;ref_src=twsrc%5Etfw">
-                #ISC2020
+      <LessWidthDiv>
+        <Heading1>{award.name}</Heading1>
+        <Heading2>
+          {award.honorIssuer} | {award.honorDate}
+        </Heading2>
+        <AwardPictures>
+          {images?.map((image: string, index: number) => (
+            <AwardPicture key={index} src={image} />
+          ))}
+        </AwardPictures>
+        <AwardDesc>{award.honorDescription}</AwardDesc>
+        {award.name === "107th Indian Science Congress" && (
+          <div>
+            <Heading2>
+              <strong>Tweet: </strong>
+            </Heading2>
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">
+                The young bright children showcased their innovation and
+                creativity in scientific projects during the Children Science
+                Congress that was organised as a part of{" "}
+                <a href="https://twitter.com/hashtag/ISC2020?src=hash&amp;ref_src=twsrc%5Etfw">
+                  #ISC2020
+                </a>
+                .{" "}
+                <a href="https://t.co/yG3DeHmSpp">pic.twitter.com/yG3DeHmSpp</a>
+              </p>
+              &mdash; PIB India (@PIB_India){" "}
+              <a href="https://twitter.com/PIB_India/status/1213380586405892096?ref_src=twsrc%5Etfw">
+                January 4, 2020
               </a>
-              . <a href="https://t.co/yG3DeHmSpp">pic.twitter.com/yG3DeHmSpp</a>
-            </p>
-            &mdash; PIB India (@PIB_India){" "}
-            <a href="https://twitter.com/PIB_India/status/1213380586405892096?ref_src=twsrc%5Etfw">
-              January 4, 2020
-            </a>
-          </blockquote>{" "}
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charSet="utf-8"
-          ></script>
-        </div>
-      )}
+            </blockquote>{" "}
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charSet="utf-8"
+            ></script>
+          </div>
+        )}
+      </LessWidthDiv>
     </Main>
   );
 }
@@ -156,4 +159,12 @@ const AwardDesc = styled.p`
   font-size: 1.2rem;
   margin: 0;
   margin-bottom: 1rem;
+`;
+
+const LessWidthDiv = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+  @media (max-width: ${({ theme }) => theme.maxWidth}) {
+    margin: 0;
+  }
 `;

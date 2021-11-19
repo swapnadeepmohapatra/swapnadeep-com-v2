@@ -6,7 +6,9 @@ const Grid = styled.div`
   grid-gap: 1rem;
   justify-content: center;
   align-items: stretch;
-  margin: 1rem 0;
+
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 1rem auto;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -18,12 +20,11 @@ const Grid = styled.div`
 `;
 
 const GridItem = styled.div`
-  background: #f0faff;
+  background: ${({ theme }) => theme.lightBg};
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border: 1px solid #ccc;
-  // border: 1px solid rgb(0, 174, 255);
+  border: 1px solid ${({ theme }) => theme.border};
   border-radius: 5px;
   will-change: transform;
   transition-property: box-shadow;
@@ -31,8 +32,7 @@ const GridItem = styled.div`
   transition-duration: 0.3s;
   cursor: pointer;
   :hover {
-    box-shadow: 0px 0px 5px #ccc;
-    // box-shadow: 0px 0px 5px rgb(0, 174, 255);
+    box-shadow: 0px 0px 5px ${({ theme }) => theme.borderBg};
   }
 `;
 
