@@ -50,6 +50,21 @@ function Talk({ slug }: TalkProps) {
           <strong>Slides: </strong>
           <TalkLink href={talk.slides}>{talk.slides}</TalkLink>
         </Heading2>
+        <br />
+        <Heading2>
+          <strong>Recording:</strong>
+        </Heading2>
+        <IFRAMEContainer>
+          <IFRAME
+            // width="500"
+            // height="549"
+            src="https://www.youtube.com/embed/cRK1MZ6x7FI"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></IFRAME>
+        </IFRAMEContainer>
       </LessWidthDiv>
     </Main>
   );
@@ -70,6 +85,24 @@ const TalkDesc = styled.p`
 const LessWidthDiv = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
+`;
+
+const IFRAME = styled.iframe`
+  // position: relative;
+  // overflow: hidden;
+  // width: 100%;
+  // // padding-top: 56.25%;
+  // padding-top: 56.25%;
+`;
+
+const IFRAMEContainer = styled.div`
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
+  // width: 100%;
+  // height: 100%;
 `;
 
 export default Talk;
