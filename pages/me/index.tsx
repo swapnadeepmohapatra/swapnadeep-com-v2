@@ -10,11 +10,8 @@ function Application() {
   return (
     <Main>
       <Head>
-        <title>Application - Swapnadeep</title>
-        <meta
-          name="description"
-          content="Application of Swapnadeep Mohapatra"
-        />
+        <title>About - Swapnadeep</title>
+        <meta name="description" content="More About Swapnadeep Mohapatra" />
       </Head>
       <LessWidthDiv>
         <Content>
@@ -150,7 +147,7 @@ function Application() {
           <Pragraph>
             You can view my internship experience letter{" "}
             <LinkA
-              href="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b11ad192-ef09-45fe-8867-393ef066ff7f/Internship_Letter_for_Swapnadeep-converted-signed_%281%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211119%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211119T083006Z&X-Amz-Expires=86400&X-Amz-Signature=06827cfcad70545249e7bfba39e4447d7d84740f7d50cde6a3c6f9aaaac3495c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Internship%2520Letter%2520for%2520Swapnadeep-converted-signed%2520%281%29.pdf%22&x-id=GetObject"
+              href="https://drive.google.com/file/d/12lNGiUSZBojJlMQnVBA5cgJDxVThRmfT/view?usp=sharing"
               rel="noopener noreferrer"
               target={"_blank"}
             >
@@ -197,23 +194,49 @@ function Application() {
             the payment of the first freelance gig. Then I got stipend from my
             internship and then I got more into it.
             <br />I have done many courses about finance on Varsity. You can
-            view the certificates here.
+            view the certificates{" "}
+            <LinkA
+              href="http://swapnadeep.com/finance"
+              rel="noopener noreferrer"
+              target={"_blank"}
+            >
+              here
+            </LinkA>
+            .
           </Pragraph>
           <Heading2>Some of the essays I wrote</Heading2>
           <List>
-            <GridItem>
-              What is the greatest challenge you have ever faced? Did you
-              overcome it? If yes, how? If no, what did you learn from the
-              experience?
-            </GridItem>
-            <GridItem>
-              Describe one thing you would want to change about the world, and
-              how technology can be used to bring about that change.
-            </GridItem>
+            <LinkNormal
+              href="https://www.notion.so/swapnadeep/What-is-the-greatest-challenge-you-have-ever-faced-Did-you-overcome-it-If-yes-how-If-no-what-di-52529968143d4810bbdd1f298da75794"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GridItem>
+                What is the greatest challenge you have ever faced? Did you
+                overcome it? If yes, how? If no, what did you learn from the
+                experience?
+              </GridItem>
+            </LinkNormal>
+            <LinkNormal
+              href="https://www.notion.so/swapnadeep/Describe-one-thing-you-would-want-to-change-about-the-world-and-how-technology-can-be-used-to-bring-cfc86673964a4a7abfdefdbd53a7dd82"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GridItem>
+                Describe one thing you would want to change about the world, and
+                how technology can be used to bring about that change.
+              </GridItem>
+            </LinkNormal>
           </List>
           <Heading2>Recommendation Letters</Heading2>
           <List>
-            <GridItem>Sandeep Devarapalli</GridItem>
+            <LinkNormal
+              href="https://drive.google.com/file/d/1k4-SHEHxNQ3vITsSW8IFDE5RCTSShVle/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GridItem>Sandeep Devarapalli</GridItem>
+            </LinkNormal>
           </List>
         </Content>
       </LessWidthDiv>
@@ -241,6 +264,11 @@ const Pragraph = styled.p`
 
 const LinkA = styled.a`
   color: #08abff;
+`;
+
+const LinkNormal = styled.a`
+  color: #000;
+  text-decoration: none;
 `;
 
 const UnorderList = styled.ul`
