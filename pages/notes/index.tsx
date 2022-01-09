@@ -1,52 +1,51 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { LessWidthDiv } from "../../components/LessWidthDiv";
 import { Main } from "../../components/Main";
 import { Heading1 } from "../../components/Heading";
-import { Description, Grid, GridItem, Name } from "../../components/Grid";
+import { GridItem, Name } from "../../components/Grid";
 import styled from "styled-components";
 
-function Finance() {
+function Notes() {
   return (
     <Main>
       <Head>
-        <title>Finance - Swapnadeep</title>
+        <title>Notes - Swapnadeep</title>
         <meta
           name="description"
-          content="Finance Portfolio of Swapnadeep Mohapatra"
+          content="Notes Portfolio of Swapnadeep Mohapatra"
         />
       </Head>
       <LessWidthDiv>
-        <Heading1>Finance Certificates</Heading1>
+        <Heading1>Notes</Heading1>
         <List>
           <LinkNormal
-            href="https://drive.google.com/file/d/1ke7Xqxpf3zazKAWmQ09FDZV8-cQGacTk/view?usp=sharing"
+            href="https://swapnadeep.notion.site/Ankur-Warikoo-Notes-7a1568313cc84b0fad20ff4168263e58"
             target="_blank"
             rel="noopener noreferrer"
           >
             <GridItem>
-              <Name>Stock Market Basics</Name>
-              <Description>Varsity (212.5/250)</Description>
+              <Name>The Complete Guide To Starting Up</Name>
+              <Description>by - Ankur Warikoo</Description>
             </GridItem>
           </LinkNormal>
           <LinkNormal
-            href="https://drive.google.com/file/d/1ywNfDLOfwQBEErFYuljkEQHhmwLy9Nqv/view?usp=sharing"
+            href="https://js.swapnadeep.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <GridItem>
-              <Name>Technical Analysis</Name>
-              <Description>Varsity (250/250)</Description>
+              <Name>JavaScript/ Web Development</Name>
             </GridItem>
           </LinkNormal>
           <LinkNormal
-            href="https://drive.google.com/file/d/1e_X-102P-RZ0evwu6FuzSy4gthQbphSZ/view?usp=sharing"
+            href="https://dsalgo.swapnadeep.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <GridItem>
-              <Name>Futures Trading</Name>
-              <Description>Varsity (240/250)</Description>
+              <Name>Data Structures and Algorithm</Name>
             </GridItem>
           </LinkNormal>
         </List>
@@ -55,7 +54,7 @@ function Finance() {
   );
 }
 
-export default Finance;
+export default Notes;
 
 const List = styled.ul`
   display: grid;
@@ -68,7 +67,15 @@ const List = styled.ul`
   }
 `;
 
+// const LinkNormal = styled(Link)`
 const LinkNormal = styled.a`
   color: #000;
   text-decoration: none;
+`;
+
+const Description = styled.p`
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 1rem;
 `;

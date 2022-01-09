@@ -2,7 +2,7 @@ import React from "react";
 import { Main } from "../../components/Main";
 import { LessWidthDiv } from "../../components/LessWidthDiv";
 import { GridItem } from "../../components/Grid";
-import { Heading1 } from "../../components/Heading";
+import { Heading1, Heading3 } from "../../components/Heading";
 import styled from "styled-components";
 import Head from "next/head";
 
@@ -36,21 +36,23 @@ function Application() {
             easiest way.
           </Pragraph>
           <Pragraph>
-            Also, I have a passion for helping others learn. I am an active
+            I owe my continuous learning to the internet’s vast open platform
+            and like to give back to the tech community. I am an active
             contributor in many programming communities. I helped organize many
             online events and workshops. I have also spoken in communities like
             DevKode, JavaScript Meetup (Bangalore). I spoke about using GraphQL
-            as Frontend Developers. I also like to contribute to open-source
-            projects. I have actively contributed to Hacktoberfest for the past
-            3 years. I have also contributed to OSGeo as a part of Google
-            Code-In 2020.
+            as Frontend Developers. I actively participate in various
+            open-source projects, hacktoberfests, etc. to get a hands-on
+            experience on programming skills. I have also contributed to OSGeo
+            as a part of Google Code-In 2020.
           </Pragraph>
           <Pragraph>
-            I like to find out community problems and solve them. Every problem
-            I see, I try to research around it and try to figure out the root
-            cause for it. Then try to think out an idea to solve it. In most
-            cases the solution contains an approach which uses technology to
-            solve it. Here are some of the problems I tired to solve:
+            I like to find out community problems and solve them. Whenever I
+            have encountered any problems, I take a logical approach to
+            understand and identify the root cause, and come up with the
+            solution. In most cases, the solution contains a technology-driven
+            approach to solve it. Here are some of the problems I tired to solve
+            in the recent past:
           </Pragraph>
           <UnorderList>
             <ListItem>
@@ -61,9 +63,8 @@ function Application() {
               >
                 SwachhBin:
               </LinkA>{" "}
-              An IoT solution for real-time monitoring of garbage bins with
-              android and web apps for users. And other waste management
-              solutions.
+              An IoT based waste management solution for real-time monitoring of
+              garbage bins with android and web apps for users.
             </ListItem>
             <ListItem>
               <LinkA
@@ -73,9 +74,8 @@ function Application() {
               >
                 e-Kaksha:
               </LinkA>{" "}
-              A online platform to imitate the offline way of teaching in online
-              mode by using a unified platform for doing everything related to
-              education.
+              A unified platform that seamlessly brings the offline way of
+              teaching to online mode.
             </ListItem>
             <ListItem>
               <LinkA
@@ -85,7 +85,7 @@ function Application() {
               >
                 Fieldscan:
               </LinkA>{" "}
-              A simple, easy to use, and powerful tool for tracking travel
+              A simple, easy to use, and powerful tool for tracking the travel
               history of people during the hard times of pandemic.
             </ListItem>
             <ListItem>
@@ -96,9 +96,9 @@ function Application() {
               >
                 Tindev:
               </LinkA>{" "}
-              Researching co-worker is something difficult. Tindev offers you
-              the opportunity to simply accelerate the process by finding out
-              which is the best match.
+              An interactive platform that connects techies all over the world,
+              and gives an opportunity to learn, share your experiences, pick
+              co-workers for your projects.
             </ListItem>
             <ListItem>
               <LinkA
@@ -107,15 +107,16 @@ function Application() {
               >
                 SiteBlocker:
               </LinkA>{" "}
-              A Chrome Extension to block distracting site during your
+              A Chrome extension to block distracting sites during your
               productive hours.
             </ListItem>
           </UnorderList>
           <Pragraph>
-            I have also taken part in hackathons and have participated in many
-            competitions. I have won 5 National Level Science and Innovation
-            competitions. And also have participated in TechFests conducted by
-            various colleges. You can view all my achievements{" "}
+            In the past 4 years, I got an opportunity to showcase my e-SwachhBin
+            solution in various science and innovation competitions all over
+            India, and have won 5 National Level awards for the same. I have
+            also participated and won many other TechFests conducted by various
+            colleges. You can view all my achievements{" "}
             <LinkA
               href="https://swapnadeep.com/awards"
               rel="noopener noreferrer"
@@ -126,7 +127,7 @@ function Application() {
             .
           </Pragraph>
           <Pragraph>
-            In the year 2020, I interned at a Startup building a SaaS product
+            In the year 2020, I interned at a Startup, to build a SaaS product
             connecting startups and Angel investors. Initially, I was part of
             the data platform team where I was responsible for building the
             frontend of the internal tool that was used to view and compare all
@@ -136,13 +137,11 @@ function Application() {
             and Typescript and also used to default driver of MongoDB for
             database communication. I was also part of the team that developed
             the front-end of the SAAS product which helps startups to accelerate
-            their growth.
-            <br />
-            It was really a get learning experience to work with some great and
-            smart folks. Got to learn a lot working in a huge codebase and
-            writing scalable code with all the best practices. The Tech Stack
-            that I used were React, Redux, NodeJS, MongoDB, Sass. I also
-            integrated a Chat Bot in the app.
+            their growth. Those 7 months was a great learning experience to work
+            with some smart folks in the startup world. I got to learn a lot
+            working in a huge codebase and writing scalable code with all the
+            best practices. The Tech Stack that I used were React, Redux,
+            NodeJS, MongoDB, SaaS. I also integrated a Chat Bot in the app.
           </Pragraph>
           <Pragraph>
             You can view my internship experience letter{" "}
@@ -155,15 +154,23 @@ function Application() {
             </LinkA>
           </Pragraph>
           <Pragraph>
-            As mentioned before I have spoken in one of the biggest tech
-            communities in India. I talked about{" "}
-            <Highlight>Getting Started with GraphQL</Highlight>. I discussed
-            about what GraphQL is, what is Query, Mutation, and Subscription,
-            then explained how it works with React and Apollo, also talked about
-            testing GraphQL APIs. It was really a great experience speaking in
-            front of 150+ folks. The talk was followed by a QnA session, where I
-            got a chance to chat with some of the best minds in the industry and
-            answer their queries.
+            As mentioned before, I have spoken in one of the biggest tech
+            communities in India. I talked about Getting Started with GraphQL,
+            which covered various topics such as what is GraphQL, what is Query,
+            Mutation, and Subscription, how it works with React and Apollo,
+            testing GraphQL APIs. Speaking in front of 150+ folks from the tech
+            community was a learning experience that helped my boost my
+            confidence in public speaking. The talk was followed by a QnA
+            session, where I got a chance to chat with some of the best minds in
+            the industry and answer their queries. As mentioned before I have
+            spoken in one of the biggest tech communities in India. I talked
+            about <Highlight>Getting Started with GraphQL</Highlight>. I
+            discussed about what GraphQL is, what is Query, Mutation, and
+            Subscription, then explained how it works with React and Apollo,
+            also talked about testing GraphQL APIs. It was really a great
+            experience speaking in front of 150+ folks. The talk was followed by
+            a QnA session, where I got a chance to chat with some of the best
+            minds in the industry and answer their queries.
             <br />
             You can view the slides and the recording of the talk{" "}
             <LinkA
@@ -176,25 +183,19 @@ function Application() {
             .
           </Pragraph>
           <Pragraph>
-            I have discussed a lot about my experience in the field of Software
-            Development and my extra extra curricular achievements. Now comming
-            to my curriculars, I have won many olympiads too. I am not a book
-            worm but I love to read a lot of books. I have read many
-            encyclopedias, tech related books, nobels, etc. My favorite subjects
-            used to be Maths and Science, especially Physics. I got 94.4% in my
-            10th boards, was among the Top 10% of the class.
+            Coming to my academics, I believe i have done fairly well, if not
+            the best. I am not a book worm but I love to read tech related
+            books, and many others in the non-fiction genre. I ensure that my
+            interests and hobbies do not affect my academics, and I managed to
+            bag 94.4% in my 10th board which was among the top 10% of the entire
+            batch. I have won many Olympiads too.
           </Pragraph>
           <Pragraph>
-            I keep a keen intrest in finance too. I track stocks and other
-            assests and invest in them both actively and passively. During my
-            free time I also take a look at the financials of the companies I am
-            invested in, see their future growth plans. I also apply for a lot
-            of IPOs and got allotment in some really great IPOs too. And do you
-            know from where this hobby comes from? I got into this after I got
-            the payment of the first freelance gig. Then I got stipend from my
-            internship and then I got more into it.
-            <br />I have done many courses about finance on Varsity. You can
-            view the certificates{" "}
+            I also keep a keen interest in various finance topics. I actively
+            track stocks and other assets, and invest in them from time to time.
+            I took up some finance courses through Varsity that helped me
+            understand the market better and make the right investment
+            decisions. You can view the certificates{" "}
             <LinkA
               href="http://swapnadeep.com/finance"
               rel="noopener noreferrer"
@@ -202,29 +203,56 @@ function Application() {
             >
               here
             </LinkA>
-            .
+            . This interest in finance came during my 7-month internship at the
+            startup, when i received my first stipend. Instead of spending this
+            money unnecessarily, i decided to invest it that could help me in my
+            future goals. During my free time, I also take a look at the
+            financials of the companies I am invested in, to understand their
+            future growth plans and vision, broadly in the areas of
+            sustainability and innovations.
+          </Pragraph>
+          <Pragraph>
+            Learning is a never-ending experience, and there’s so much more to
+            know and share with the world. Do visit my page later to know about
+            my new endeavors. I hope this motivates you to experiment, innovate
+            and do more with your life. Never stop learning. See you around.
           </Pragraph>
           <Heading2>Some of the essays I wrote</Heading2>
           <List>
             <LinkNormal
-              href="https://www.notion.so/swapnadeep/What-is-the-greatest-challenge-you-have-ever-faced-Did-you-overcome-it-If-yes-how-If-no-what-di-52529968143d4810bbdd1f298da75794"
+              href="https://swapnadeep.notion.site/Describe-a-topic-idea-or-concept-you-find-so-engaging-that-it-makes-you-lose-all-track-of-time-Wh-6f38e9c468194abb8aaac7905f0a4fcc"
               target="_blank"
               rel="noopener noreferrer"
             >
               <GridItem>
-                What is the greatest challenge you have ever faced? Did you
-                overcome it? If yes, how? If no, what did you learn from the
-                experience?
+                Describe a topic, idea, or concept you find so engaging that it
+                makes you lose all track of time. Why does it captivate you?
+                What or who do you turn to when you want to learn more?
               </GridItem>
             </LinkNormal>
             <LinkNormal
-              href="https://www.notion.so/swapnadeep/Describe-one-thing-you-would-want-to-change-about-the-world-and-how-technology-can-be-used-to-bring-cfc86673964a4a7abfdefdbd53a7dd82"
+              href="https://swapnadeep.notion.site/Think-of-something-you-are-really-passionate-about-This-could-be-anything-a-hobby-a-particular-c-3e7cd3af29bf48a492a417b84eabdeb9"
               target="_blank"
               rel="noopener noreferrer"
             >
               <GridItem>
-                Describe one thing you would want to change about the world, and
-                how technology can be used to bring about that change.
+                Think of something you are really passionate about. This could
+                be anything - a hobby, a particular concept, or even a startup
+                idea. How do you learn more about it? What keeps you motivated
+                to pursue it?
+              </GridItem>
+            </LinkNormal>
+            <LinkNormal
+              href="https://swapnadeep.notion.site/Our-vision-is-to-nurture-the-next-generation-of-fearless-leaders-who-will-solve-the-toughest-challen-869dfa92372b4e98adfdef9f6df03fef"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GridItem>
+                Our vision is to nurture the next generation of fearless leaders
+                who will solve the toughest challenges of our planet using
+                technology. Tell us how have you developed your interest in a
+                tech career. Describe 2-3 personal experiences that have shaped
+                this interest.
               </GridItem>
             </LinkNormal>
           </List>
@@ -235,9 +263,19 @@ function Application() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GridItem>Sandeep Devarapalli</GridItem>
+              <GridItem>
+                Sandeep Devarapalli - Previous Employee (CEO Hackstrap)
+              </GridItem>
             </LinkNormal>
           </List>
+          <Heading2>My Resume</Heading2>
+          <CTAButton
+            href="https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download My Resume
+          </CTAButton>
         </Content>
       </LessWidthDiv>
     </Main>
@@ -290,3 +328,26 @@ const ListItem = styled.li`
 `;
 
 const Highlight = styled.strong``;
+
+export const CTAButton = styled.a`
+  margin: 0 2rem;
+  text-decoration: none;
+  background: ${({ theme }) => theme.gradientMain};
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  color: ${({ theme }) => theme.body};
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0.2rem 0.5rem ${({ theme }) => theme.shadowColor};
+  }
+
+  @media (max-width: 600px) {
+    margin: 0 2rem;
+    text-align: center;
+    width: calc(100%-5rem);
+  }
+`;

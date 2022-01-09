@@ -42,6 +42,9 @@ function Project({ slug }: ProjectProps) {
           name="description"
           content={`${data.name} made by Swapnadeep Mohapatra`}
         />
+        {data.name === "e-SwachhBin" && (
+          <script async src="https://platform.twitter.com/widgets.js" />
+        )}
       </Head>
       <LessWidthDiv>
         <Heading1>{data.name}</Heading1>

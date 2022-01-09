@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AWARD, BLOGS, PROJECT, TALK, WORK } from "../interfaces";
@@ -104,6 +105,10 @@ const Home: NextPage<{
             <h2>Hi 👋 I am Swapnadeep Mohapatra! </h2>
             <Prargraph>I&apos;m currently studying in grade 12.</Prargraph>
             <Prargraph>I love to build awesome tech.</Prargraph>
+            <Link href="/me" passHref>
+              <LinkPrargraph>Know More About Me</LinkPrargraph>
+            </Link>
+            {/* <a href="/me">Know More About Me</a> */}
           </div>
           <ProfileImageContainer>
             <ProfileImage
@@ -252,6 +257,14 @@ const Prargraph = styled.p`
   margin: 0.5rem 0rem;
 `;
 
+const LinkPrargraph = styled.p`
+  font-size: 1.1rem;
+  margin: 0.5rem 0rem;
+  text-decoration: underline;
+  color: #06acff;
+  cursor: pointer;
+`;
+
 const Awards = styled.div`
   height: 25rem;
   background: ${({ theme }) => theme.gradient1};
@@ -314,7 +327,7 @@ const BlogButton = styled.a`
   }
 `;
 
-const CTAButton = styled.a`
+export const CTAButton = styled.a`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 50%);
@@ -474,7 +487,7 @@ const CardProject = styled.div`
   }
 `;
 
-const Resume = styled.div`
+export const Resume = styled.div`
   height: 200px;
   padding-bottom: 2rem;
   margin: 3rem 0rem;

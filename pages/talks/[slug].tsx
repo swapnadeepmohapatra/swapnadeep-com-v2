@@ -42,6 +42,9 @@ function Talk({ slug }: TalkProps) {
           name="description"
           content={`${talk.name} talk given by Swapnadeep Mohapatra`}
         />
+        {talk.name === "Getting Started with GraphQL for Frontend Devs" && (
+          <script async src="https://platform.twitter.com/widgets.js" />
+        )}
       </Head>
       <LessWidthDiv>
         <Heading1>{talk.name}</Heading1>
@@ -65,6 +68,35 @@ function Talk({ slug }: TalkProps) {
             allowFullScreen
           ></IFRAME>
         </IFRAMEContainer>
+        {talk.name === "Getting Started with GraphQL for Frontend Devs" && (
+          <div>
+            <Heading2>
+              <strong>Tweet: </strong>
+            </Heading2>
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">
+                I gave my first tech talk yesterday. The topic was Getting
+                Started With GraphQL. I talked about What GraphQL is. Query,
+                Mutation & Subscriptions. Talked about React with Apollo and
+                also did a bit of testing.
+                <br />
+                <br />
+                It was a great experience giving my first talk in front of 150+
+                folks.
+                <a href="https://t.co/S2iFKkQDAP">pic.twitter.com/S2iFKkQDAP</a>
+              </p>
+              &mdash; Swapnadeep Mohapatra (@swapnadeeptukk){" "}
+              <a href="https://twitter.com/swapnadeeptukk/status/1457205201472008193?ref_src=twsrc%5Etfw">
+                November 7, 2021
+              </a>
+            </blockquote>{" "}
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charSet="utf-8"
+            ></script>
+          </div>
+        )}
       </LessWidthDiv>
     </Main>
   );
