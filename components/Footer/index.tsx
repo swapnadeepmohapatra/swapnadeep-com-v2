@@ -6,73 +6,79 @@ import { game_log } from "../../utils/Fun";
 
 function Footer() {
   return (
-    <_footer>
-      {game_log()}
-      <Contact>
-        <Fragment>
-          Connect with me on
-          <div>
-            <Social
-              href="https://github.com/swapnadeepmohapatra"
+    <>
+      <_footer>
+        <>
+          {game_log()}
+          <Contact>
+            <Fragment>
+              Connect with me on
+              <div>
+                <Social
+                  href="https://github.com/swapnadeepmohapatra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Github"
+                >
+                  <Github />
+                </Social>
+                <Social
+                  href="https://www.instagram.com/swapnadeep_mohapatra/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Instagram"
+                >
+                  <Instagram />
+                </Social>
+                <Social
+                  href="https://www.linkedin.com/in/swapnadeep-mohapatra/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Linkedin"
+                >
+                  <Linkedin />
+                </Social>
+                <Social
+                  href="https://twitter.com/swapnadeeptukk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Twitter"
+                >
+                  <Twitter />
+                </Social>
+                <Social href="mailto:hello@swapnadeep.com" title="Email">
+                  <Mail />
+                </Social>
+              </div>
+            </Fragment>
+          </Contact>
+          <ContactMid>
+            For more:
+            <Link
+              href="https://links.swapnadeep.com/"
               target="_blank"
               rel="noopener noreferrer"
-              title="Github"
             >
-              <Github />
-            </Social>
-            <Social
-              href="https://www.instagram.com/swapnadeep_mohapatra/"
+              links.swapnadeep.com
+            </Link>
+          </ContactMid>
+          <Contact>
+            Reach out to me on:
+            <Link
+              href="mailto:hello@swapnadeep.com"
               target="_blank"
               rel="noopener noreferrer"
-              title="Instagram"
             >
-              <Instagram />
-            </Social>
-            <Social
-              href="https://www.linkedin.com/in/swapnadeep-mohapatra/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Linkedin"
-            >
-              <Linkedin />
-            </Social>
-            <Social
-              href="https://twitter.com/swapnadeeptukk"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Twitter"
-            >
-              <Twitter />
-            </Social>
-            <Social href="mailto:hello@swapnadeep.com" title="Email">
-              <Mail />
-            </Social>
-          </div>
-        </Fragment>
-      </Contact>
-      <ContactMid>
-        For more:
-        <Link
-          href="https://links.swapnadeep.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          links.swapnadeep.com
-        </Link>
-      </ContactMid>
-      <Contact>
-        Reach out to me on:
-        <Link
-          href="mailto:hello@swapnadeep.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          hello@swapnadeep.com
-        </Link>
-      </Contact>
-      <Line />
-      <FooterText>{new Date().getFullYear()} © Swapnadeep Mohapatra</FooterText>
-    </_footer>
+              hello@swapnadeep.com
+            </Link>
+          </Contact>
+          <Line />
+          <FooterText>
+            {new Date().getFullYear()} © Swapnadeep Mohapatra
+          </FooterText>
+        </>
+      </_footer>
+    </>
   );
 }
 
