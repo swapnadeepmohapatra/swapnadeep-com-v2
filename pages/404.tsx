@@ -1,10 +1,9 @@
-import { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
 import { Main } from "../components/Main";
 import styled from "styled-components";
 
-const Custom404: NextPage = () => {
+function Custom404({}) {
   return (
     <Main>
       <Head>
@@ -14,7 +13,7 @@ const Custom404: NextPage = () => {
       <Heading>404 | Page Not Found</Heading>
     </Main>
   );
-};
+}
 
 export default Custom404;
 

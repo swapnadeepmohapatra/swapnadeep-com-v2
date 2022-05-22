@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import type { NextPage } from "next";
 import Head from "next/head";
 import { URL, Bar } from "../utils";
 import { AWARD } from "../interfaces";
@@ -18,11 +17,7 @@ export async function getStaticProps() {
   };
 }
 
-const Awards: NextPage<{ staticData: AWARD[] }> = ({
-  staticData,
-}: {
-  staticData: AWARD[];
-}) => {
+function Awards({ staticData }: { staticData: AWARD[] }) {
   const [data, setData] = useState<AWARD[]>(staticData);
 
   useEffect(() => {
@@ -54,6 +49,6 @@ const Awards: NextPage<{ staticData: AWARD[] }> = ({
       <Bar />
     </Main>
   );
-};
+}
 
 export default Awards;

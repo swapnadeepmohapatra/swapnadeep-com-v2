@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,15 +37,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home: NextPage<{
-  staticData: {
-    prizes: AWARD[];
-    projects: PROJECT[];
-    blogs: BLOGS[];
-    talks: TALK[];
-    works: WORK[];
-  };
-}> = ({
+function Home({
   staticData,
 }: {
   staticData: {
@@ -56,7 +47,7 @@ const Home: NextPage<{
     talks: TALK[];
     works: WORK[];
   };
-}) => {
+}) {
   const [awardsList, setAwardsList] = useState<AWARD[]>(staticData.prizes);
   const [projectsList, setProjectsList] = useState<PROJECT[]>(
     staticData.projects
@@ -270,7 +261,7 @@ const Home: NextPage<{
       </Main>
     </div>
   );
-};
+}
 
 export default Home;
 
