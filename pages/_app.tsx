@@ -1,6 +1,6 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import { Fragment, useEffect, useState } from "react";
+import AppProps from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, GlobalStyles, lightTheme } from "../utils";
