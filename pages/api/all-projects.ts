@@ -3,7 +3,7 @@ import Projects from "../../models/Projects";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const rec = await Projects.find({});
+  const rec = await Projects.find({}).sort([["_id", "asc"]]);
 
   res.status(200).json({ projects: rec });
 }

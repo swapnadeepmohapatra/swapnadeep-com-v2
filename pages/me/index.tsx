@@ -276,6 +276,40 @@ function Application() {
           >
             Download My Resume
           </CTAButton>
+          {/* <Heading2>What people have to say about me?</Heading2> */}
+          {/* <IFRAMEContainer>
+            <div style={{ display: "grid", placeItems: "center" }}>
+              <IFRAME
+                height="500"
+                // width="500"
+                // height="549"
+                src="https://www.youtube.com/embed/qeSs5zDMOG0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></IFRAME>
+              <Pragraph>
+                <Highlight>Varun Mayya: </Highlight>Founder & CEO of Avalon Labs
+              </Pragraph>
+            </div>
+            <div style={{ display: "grid", placeItems: "center" }}>
+              <IFRAME
+                height="500"
+                // width="500"
+                // height="549"
+                src="https://www.youtube.com/embed/6h5Uyyd54rk"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></IFRAME>
+              <Pragraph>
+                <Highlight> Tanay Pratap: </Highlight>Founder & CTO Invact,
+                xMicrosoft
+              </Pragraph>
+            </div>
+          </IFRAMEContainer> */}
         </Content>
       </LessWidthDiv>
     </Main>
@@ -350,4 +384,30 @@ export const CTAButton = styled.a`
     text-align: center;
     width: calc(100%-5rem);
   }
+`;
+
+const IFRAME = styled.iframe`
+  // position: relative;
+  // overflow: hidden;
+  // width: 100%;
+  // // padding-top: 56.25%;
+  // padding-top: 56.25%;
+`;
+
+const IFRAMEContainer = styled.div`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // bottom: 0;
+  // right: 0;
+  // width: 100%;
+  // height: 100%;
 `;

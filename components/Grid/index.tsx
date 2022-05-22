@@ -31,7 +31,7 @@ const GridItem = styled.div`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
   cursor: pointer;
-  :hover {
+  &:hover {
     box-shadow: 0px 0px 5px ${({ theme }) => theme.borderBg};
   }
 `;

@@ -54,6 +54,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             content="initial-scale=1.0, width=device-width"
           />
           <link rel="icon" href="/favicon.ico" />
+          <meta name="robots" content="index,follow" />
+          <meta name="googlebot" content="index,follow" />
         </Head>
         {/* <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}> */}
         {/* FIXME: Temp fix for default light theme */}
@@ -96,6 +98,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             content="initial-scale=1.0, width=device-width"
           />
           <link rel="icon" href="/favicon.ico" />
+          <meta name="robots" content="index,follow" />
+          <meta name="googlebot" content="index,follow" />
         </Head>
         {/* <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}> */}
         {/* FIXME: Temp fix for default light theme */}

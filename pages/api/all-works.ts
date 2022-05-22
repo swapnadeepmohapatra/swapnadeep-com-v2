@@ -3,7 +3,7 @@ import Works from "../../models/Works";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const rec = await Works.find({});
+  const rec = await Works.find({}).sort([["_id", "asc"]]);
 
   res.status(200).json({ works: rec });
 }

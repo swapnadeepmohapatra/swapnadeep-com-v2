@@ -3,7 +3,7 @@ import Prize from "../../models/Prizes";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const rec = await Prize.find({ important: true });
+  const rec = await Prize.find({ important: true }).sort([["_id", "asc"]]);
 
   res.status(200).json({ prizes: rec });
 }

@@ -8,25 +8,24 @@ import Head from "next/head";
 
 interface AwardProps {
   slug: string;
+  data?: AWARD;
 }
 
-export async function getServerSideProps(context: { query: AwardProps }) {
-  return { props: { slug: context.query.slug } };
+export async function getStaticPaths() {
+  return { paths: [], fallback: true };
 }
 
-function Award({ slug }: AwardProps) {
-  const [award, setAward] = useState<AWARD>();
+export async function getStaticProps(context: { params: AwardProps }) {
+  console.log(context);
+  const slug = context.params.slug;
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(`${URL}/api/get-prize/${slug}`);
-      const data = await res.json();
+  const res = await fetch(`${URL}/api/get-prize/${slug}`);
+  const data = await res.json();
 
-      setAward(data.prize);
-    }
-    fetchData();
-  }, [slug]);
+  return { props: { slug: context.params.slug, data: data.prize } };
+}
 
+function Award({ slug, data: award }: AwardProps) {
   if (!award) {
     return (
       <Main>

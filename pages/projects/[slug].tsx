@@ -8,24 +8,24 @@ import Head from "next/head";
 
 interface ProjectProps {
   slug: string;
+  data?: PROJECT;
 }
 
-export async function getServerSideProps(context: { query: ProjectProps }) {
-  return { props: { slug: context.query.slug } };
+export async function getStaticPaths() {
+  return { paths: [], fallback: true };
 }
 
-function Project({ slug }: ProjectProps) {
-  const [data, setData] = useState<PROJECT>();
+export async function getStaticProps(context: { params: ProjectProps }) {
+  console.log(context);
+  const slug = context.params.slug;
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(`${URL}/api/get-project/${slug}`);
-      const data = await res.json();
-      setData(data.project);
-    }
-    fetchData();
-  }, [slug]);
+  const res = await fetch(`${URL}/api/get-project/${slug}`);
+  const data = await res.json();
 
+  return { props: { slug: context.params.slug, data: data.project } };
+}
+
+function Project({ data }: ProjectProps) {
   if (!data) {
     return (
       <Main>
@@ -72,7 +72,7 @@ function Project({ slug }: ProjectProps) {
         <Heading2>
           <strong>GitHub Link: </strong>
           <ProjectLink
-            href={data.link}
+            href={data.codeLink}
             target="_blank"
             rel="noopener noreferrer"
           >

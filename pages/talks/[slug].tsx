@@ -8,24 +8,24 @@ import { Main } from "../../components/Main";
 
 interface TalkProps {
   slug: string;
+  data?: TALK;
 }
 
-export async function getServerSideProps(context: { query: TalkProps }) {
-  return { props: { slug: context.query.slug } };
+export async function getStaticPaths() {
+  return { paths: [], fallback: true };
 }
-function Talk({ slug }: TalkProps) {
-  const [talk, setTalk] = useState<TALK>();
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(`${URL}/api/get-talk/${slug}`);
-      const data = await res.json();
+export async function getStaticProps(context: { params: TalkProps }) {
+  console.log(context);
+  const slug = context.params.slug;
 
-      setTalk(data.talk);
-    }
-    fetchData();
-  }, [slug]);
+  const res = await fetch(`${URL}/api/get-talk/${slug}`);
+  const data = await res.json();
 
+  return { props: { slug: context.params.slug, data: data.talk } };
+}
+
+function Talk({ data: talk }: TalkProps) {
   if (!talk) {
     return (
       <Main>

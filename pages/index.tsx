@@ -94,9 +94,38 @@ const Home: NextPage<{
     <div>
       <Head>
         <title>Swapnadeep Mohapatra</title>
+        <link rel="canonical" href="https://www.swapnadeep.com" />
+        <meta property="og:url" content="https://swapnadeep.com" />
         <meta
           name="description"
+          content="Hi! I am Swapnadeep Mohapatra. A software developer working on frontend, backend and design. Connect with me at swapnadeep.com"
+        />
+        <meta
+          name="keywords"
+          content="Swapnadeep, Swapnadeep Mohapatra, JavaScript, TypeScript, GraphQL, ReactJS, IoT, NextJS, Figma, MongoDB, Python, MySQL"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Swapnadeep Mohapatra" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dxuiu1h8i/image/upload/v1653203240/Portfolio%20Files/og_image_ydaicd.png"
+        />
+        <meta
+          property="og:description"
+          content="Hi! I am Swapnadeep Mohapatra. A software developer working on frontend, backend and design. Connect with me at swapnadeep.com"
+        />
+        <meta property="og:site_name" content="Swapnadeep Mohapatra" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@swapnadeeptukk" />
+        <meta name="twitter:creator" content="@swapnadeeptukk" />
+        <meta name="twitter:title" content="Swapnadeep Mohapatra" />
+        <meta
+          name="twitter:description"
           content="Portfolio site of Swapnadeep Mohapatra | Full Stack Developer"
+        />
+        <meta
+          name="twitter:image:src"
+          content="https://res.cloudinary.com/dxuiu1h8i/image/upload/v1653203240/Portfolio%20Files/og_image_ydaicd.png"
         />
       </Head>
       <Main>
@@ -114,8 +143,8 @@ const Home: NextPage<{
             <ProfileImage
               src="/swapnadeep_mohapatra.jpeg"
               alt="profile_pic"
-              width={"200px"}
-              height={"200px"}
+              height={200}
+              width={200}
             />
           </ProfileImageContainer>
         </PersonalDetail>
@@ -151,7 +180,7 @@ const Home: NextPage<{
                       <ImageCard
                         src={project.thumbnail || project.image}
                         alt={`screenshot of ${project.name} project`}
-                        layout="fixed"
+                        layout="responsive"
                         width="200px"
                         height="120px"
                       />
@@ -208,7 +237,7 @@ const Home: NextPage<{
                     <ImageCard
                       src={blog.pic}
                       alt={`Thumbnail of ${blog.name} blog`}
-                      layout="fixed"
+                      layout="responsive"
                       width="200px"
                       height="90px"
                     />
@@ -261,7 +290,8 @@ const LinkPrargraph = styled.p`
   font-size: 1.1rem;
   margin: 0.5rem 0rem;
   text-decoration: underline;
-  color: #06acff;
+  // color: #06acff;
+  color: #035e8b;
   cursor: pointer;
 `;
 
@@ -385,7 +415,7 @@ const Card = styled.div`
   background: ${({ theme }) => theme.body};
   margin: 1rem;
   border-radius: 0.5rem;
-  :hover {
+  &:hover {
     transform: scale(1.05);
   }
   will-change: transform;
@@ -417,7 +447,7 @@ const TalksCard = styled.div`
   background: ${({ theme }) => theme.body};
   margin: 1rem;
   border-radius: 0.5rem;
-  :hover {
+  &:hover {
     transform: scale(1.05);
   }
   will-change: transform;
@@ -451,11 +481,11 @@ const CardBlog = styled.div`
   background: ${({ theme }) => theme.body};
   border-radius: 0.5rem;
   cursor: pointer;
-  div {
+  span {
     border-radius: 0.5rem;
   }
-  div {
-    :hover {
+  span {
+    &:hover {
       box-shadow: 0 0.5rem 1rem ${({ theme }) => theme.shadowColor};
       transform: scale(1.05);
     }
@@ -472,10 +502,10 @@ const CardProject = styled.div`
   background: ${({ theme }) => theme.body};
   border-radius: 0.5rem;
   cursor: pointer;
-  div {
+  span {
     border-radius: 0.5rem;
   }
-  div {
+  span {
     :hover {
       box-shadow: 0 0.5rem 1rem ${({ theme }) => theme.shadowColor};
       transform: scale(1.05);

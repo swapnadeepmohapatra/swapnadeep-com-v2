@@ -6,26 +6,29 @@ import styled from "styled-components";
 
 interface SlidesProps {
   slug: string;
+  data?: SLIDE;
 }
 
-export async function getServerSideProps(context: { query: SlidesProps }) {
-  return { props: { slug: context.query.slug } };
+export async function getStaticPaths() {
+  return { paths: [], fallback: true };
+}
+
+export async function getStaticProps(context: { params: SlidesProps }) {
+  console.log(context);
+  const slug = context.params.slug;
+
+  const res = await fetch(`${URL}/api/get-slide/${slug}`);
+  const data = await res.json();
+
+  return { props: { slug: context.params.slug, data: data.slide } };
 }
 
 function SlideItem(props: SlidesProps) {
-  const { slug } = props;
-  const [data, setData] = useState<SLIDE>();
+  const { slug, data } = props;
 
   useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(`${URL}/api/get-slide/${slug}`);
-      const data = await res.json();
-      setData(data?.slide);
-      typeof window !== "undefined" &&
-        window.location.replace(data?.slide?.link);
-    }
-    fetchData();
-  }, [slug]);
+    typeof window !== "undefined" && window.location.replace(data?.link || "");
+  }, [slug, data]);
 
   return (
     <Main>

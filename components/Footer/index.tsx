@@ -44,13 +44,13 @@ function Footer() {
             >
               <Twitter />
             </Social>
-            <Social href="mailto:swapnadeep456@gmail.com" title="Email">
+            <Social href="mailto:hello@swapnadeep.com" title="Email">
               <Mail />
             </Social>
           </div>
         </Fragment>
       </Contact>
-      <Contact>
+      <ContactMid>
         For more:
         <Link
           href="https://links.swapnadeep.com/"
@@ -58,6 +58,16 @@ function Footer() {
           rel="noopener noreferrer"
         >
           links.swapnadeep.com
+        </Link>
+      </ContactMid>
+      <Contact>
+        Reach out to me on:
+        <Link
+          href="mailto:hello@swapnadeep.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          hello@swapnadeep.com
         </Link>
       </Contact>
       <Line />
@@ -92,6 +102,19 @@ const Contact = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  gap: 0.5rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+`;
+
+const ContactMid = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
   gap: 0.5rem;
 
   @media (max-width: 600px) {
