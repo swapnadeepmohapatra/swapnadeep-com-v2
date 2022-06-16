@@ -42,6 +42,22 @@ function Talk({ data: talk }: TalkProps) {
           name="description"
           content={`${talk.name} talk given by Swapnadeep Mohapatra`}
         />
+        <meta
+          property="og:image"
+          content={`https://og-image-generator-test.vercel.app/Talk.png?desc=${talk.name}`}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@swapnadeeptukk" />
+        <meta name="twitter:creator" content="@swapnadeeptukk" />
+        <meta name="twitter:title" content={`${talk.name} - Swapnadeep`} />
+        <meta
+          name="twitter:description"
+          content={`${talk.name} talk given by Swapnadeep Mohapatra`}
+        />
+        <meta
+          name="twitter:image:src"
+          content={`https://og-image-generator-test.vercel.app/Talk.png?desc=${talk.name}`}
+        />
         {talk.name === "Getting Started with GraphQL for Frontend Devs" && (
           <script async src="https://platform.twitter.com/widgets.js" />
         )}

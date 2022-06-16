@@ -97,6 +97,10 @@ function Award({ slug, data: award }: AwardProps) {
           name="description"
           content={`${award.name} won by Swapnadeep Mohapatra`}
         />
+        <meta
+          property="og:image"
+          content={`https://og-image-generator-test.vercel.app/Award.png?desc=${award.name}`}
+        />
       </Head>
       <LessWidthDiv>
         <Heading1>{award.name}</Heading1>

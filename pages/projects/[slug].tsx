@@ -42,6 +42,10 @@ function Project({ data }: ProjectProps) {
           name="description"
           content={`${data.name} made by Swapnadeep Mohapatra`}
         />
+        <meta
+          property="og:image"
+          content={`https://og-image-generator-test.vercel.app/Project.png?desc=${data.name}`}
+        />
         {data.name === "e-SwachhBin" && (
           <script async src="https://platform.twitter.com/widgets.js" />
         )}
