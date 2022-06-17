@@ -101,6 +101,25 @@ function Award({ slug, data: award }: AwardProps) {
           property="og:image"
           content={`https://og-image-generator-test.vercel.app/Award.png?desc=${award.name}`}
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${award.name} - Swapnadeep`} />
+        <meta
+          property="og:description"
+          content={`${award.name} won by Swapnadeep Mohapatra`}
+        />
+        <meta property="og:site_name" content="Swapnadeep Mohapatra" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@swapnadeeptukk" />
+        <meta name="twitter:creator" content="@swapnadeeptukk" />
+        <meta name="twitter:title" content="Swapnadeep Mohapatra" />
+        <meta
+          name="twitter:description"
+          content={`${award.name} won by Swapnadeep Mohapatra`}
+        />
+        <meta
+          name="twitter:image:src"
+          content={`https://og-image-generator-test.vercel.app/Award.png?desc=${award.name}`}
+        />
       </Head>
       <LessWidthDiv>
         <Heading1>{award.name}</Heading1>

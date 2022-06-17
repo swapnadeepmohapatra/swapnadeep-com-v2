@@ -46,6 +46,25 @@ function Project({ data }: ProjectProps) {
           property="og:image"
           content={`https://og-image-generator-test.vercel.app/Project.png?desc=${data.name}`}
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${data.name} - Swapnadeep`} />
+        <meta
+          property="og:description"
+          content="Hi! I am Swapnadeep Mohapatra. A software developer working on frontend, backend and design. Connect with me at swapnadeep.com"
+        />
+        <meta property="og:site_name" content="Swapnadeep Mohapatra" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@swapnadeeptukk" />
+        <meta name="twitter:creator" content="@swapnadeeptukk" />
+        <meta name="twitter:title" content="Swapnadeep Mohapatra" />
+        <meta
+          name="twitter:description"
+          content={`${data.name} made by Swapnadeep Mohapatra`}
+        />
+        <meta
+          name="twitter:image:src"
+          content={`https://og-image-generator-test.vercel.app/Project.png?desc=${data.name}`}
+        />
         {data.name === "e-SwachhBin" && (
           <script async src="https://platform.twitter.com/widgets.js" />
         )}
