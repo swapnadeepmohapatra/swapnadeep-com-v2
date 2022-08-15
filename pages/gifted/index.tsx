@@ -78,6 +78,23 @@ function Application() {
               <GridItem>Statement of Purpose</GridItem>
             </LinkNormal>
           </List> */}
+          <Heading2>Marksheet</Heading2>
+          <List>
+            <LinkNormal
+              href="https://drive.google.com/file/d/1OcaojYualW7mB575TUFzpPNrL499m6L0/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GridItem>Class 10 CBSE</GridItem>
+            </LinkNormal>
+            <LinkNormal
+              href="https://drive.google.com/file/d/1TCevXI9OG1gBmLMvCbhpxqWXOOPOfBOo/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GridItem>Class 12 CBSE</GridItem>
+            </LinkNormal>
+          </List>
           <Heading2>Recommendation Letters</Heading2>
           <List>
             <LinkNormal
