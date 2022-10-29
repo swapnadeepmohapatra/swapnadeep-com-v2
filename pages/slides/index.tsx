@@ -10,6 +10,11 @@ const slides = [
     link: "https://docs.google.com/presentation/d/1wsDEp78fnLnQRj1AM-Blxw4PIWA4ebgDtwHrObFvV0M/edit#slide=id.geee995da10_0_4",
     name: "Getting Started with GraphQL for Frontend Devs",
   },
+  {
+    slug: "webpack",
+    link: "https://docs.google.com/presentation/d/1XfAkFKRe9C1Bh-SLJKENad9qJmzDBMhvjuvQv9_7b-s/edit?usp=sharing",
+    name: "Understanding Webpack by Building Your Own",
+  },
 ];
 
 function Slides() {
