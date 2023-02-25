@@ -17,10 +17,15 @@ function Application() {
         <Content>
           <Heading1>Thank you for coming here.</Heading1>
           <Heading2>A bit about me</Heading2>
-          <Pragraph>
+          {/* <Pragraph>
             I am Swapnadeep Mohapatra. Currently I am studying in class 12th at
             D.A.V. Public School, Chandrasekharpur, Bhubaneswar. Apart from that
             I really love to write code and build awesome stuff.
+          </Pragraph> */}
+          <Pragraph>
+            I am Swapnadeep Mohapatra. Currently, I am in my First Year of B
+            Tech in CSE at KIIT University, Bhubaneswar. Apart from that I
+            really love to write code and build awesome stuff.
           </Pragraph>
           <Pragraph>
             I am keen to learn new technologies and I always try to demystify
