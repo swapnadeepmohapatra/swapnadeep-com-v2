@@ -123,9 +123,8 @@ function Home({
         <PersonalDetail>
           <div>
             <h2>Hi 👋 I am Swapnadeep Mohapatra! </h2>
-            {/* <Prargraph>I&apos;m currently studying in grade 12.</Prargraph> */}
             <Prargraph>
-              I&apos;m currently in my First Year of B.Tech in CSE.
+              I&apos;m currently in my Second Year of B.Tech in CSE.
             </Prargraph>
             <Prargraph>I love to build awesome tech.</Prargraph>
             <Link href="/me" passHref>
