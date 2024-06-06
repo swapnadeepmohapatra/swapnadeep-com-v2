@@ -8,8 +8,8 @@ const connectDB =
     }
 
     await mongoose.connect(
-      // "mongodb+srv://swapnadeep:dbpass@cluster0.xd7t4.mongodb.net/portfolio?retryWrites=true&w=majority"
-      "mongodb://13.233.103.67:27017/portfolio?retryWrites=true&w=majority"
+      "mongodb+srv://swapnadeep:dbpass@cluster0.xd7t4.mongodb.net/portfolio?retryWrites=true&w=majority"
+      // "mongodb://13.233.103.67:27017/portfolio?retryWrites=true&w=majority"
     );
     return handler(req, res);
   };
