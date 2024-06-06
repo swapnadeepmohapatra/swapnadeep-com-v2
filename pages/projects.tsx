@@ -12,7 +12,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      staticData: data.projects,
+      staticData: data.projects || [],
     },
   };
 }

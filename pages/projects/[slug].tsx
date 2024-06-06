@@ -22,7 +22,9 @@ export async function getStaticProps(context: { params: ProjectProps }) {
   const res = await fetch(`${URL}/api/get-project/${slug}`);
   const data = await res.json();
 
-  return { props: { slug: context.params.slug, data: data.project } };
+  return {
+    props: { slug: context.params.slug || "", data: data.project || {} },
+  };
 }
 
 function Project({ data }: ProjectProps) {

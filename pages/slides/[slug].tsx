@@ -20,7 +20,7 @@ export async function getStaticProps(context: { params: SlidesProps }) {
   const res = await fetch(`${URL}/api/get-slide/${slug}`);
   const data = await res.json();
 
-  return { props: { slug: context.params.slug, data: data.slide } };
+  return { props: { slug: context.params.slug || "", data: data.slide || {} } };
 }
 
 function SlideItem(props: SlidesProps) {

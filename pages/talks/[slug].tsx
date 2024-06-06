@@ -22,7 +22,7 @@ export async function getStaticProps(context: { params: TalkProps }) {
   const res = await fetch(`${URL}/api/get-talk/${slug}`);
   const data = await res.json();
 
-  return { props: { slug: context.params.slug, data: data.talk } };
+  return { props: { slug: context.params.slug || "", data: data.talk || {} } };
 }
 
 function Talk({ data: talk }: TalkProps) {

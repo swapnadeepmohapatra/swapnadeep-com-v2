@@ -27,11 +27,11 @@ export async function getStaticProps() {
   return {
     props: {
       staticData: {
-        prizes: prizesData.prizes,
-        projects: projectsData.projects,
-        blogs: blogsData.blogs,
-        talks: talksData.talks,
-        works: worksData.works,
+        prizes: prizesData.prizes || [],
+        projects: projectsData.projects || [],
+        blogs: blogsData.blogs || [],
+        talks: talksData.talks || [],
+        works: worksData.works || [],
       },
     },
   };
