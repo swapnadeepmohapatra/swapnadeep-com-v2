@@ -252,7 +252,7 @@ function Home({
           <LessWidthDiv>
             <Heading3>My Resume</Heading3>
             <CTAButton
-              href="https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf"
+              href="https://swapnadeep.com/Swapnadeep_Mohapatra_8763039380_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

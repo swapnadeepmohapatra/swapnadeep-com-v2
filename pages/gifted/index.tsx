@@ -126,7 +126,7 @@ function Application() {
           </List> */}
           <Heading2>My Resume</Heading2>
           <CTAButton
-            href="https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf"
+            href="https://swapnadeep.com/Swapnadeep_Mohapatra_8763039380_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >

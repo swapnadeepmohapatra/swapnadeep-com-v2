@@ -10,11 +10,11 @@ function Application() {
         <meta name="description" content="Resume of Swapnadeep Mohapatra" />
         <meta
           httpEquiv="Refresh"
-          content="0; url='https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf'"
+          content="0; url='https://swapnadeep.com/Swapnadeep_Mohapatra_8763039380_Resume.pdf'"
         />
       </Head>
       <div>
-        <a href="https://swapnadeep.com/Swapnadeep_Mohapatra_Resume.pdf">
+        <a href="https://swapnadeep.com/Swapnadeep_Mohapatra_8763039380_Resume.pdf">
           Click Here For Resume
         </a>
       </div>
