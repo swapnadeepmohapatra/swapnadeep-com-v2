@@ -124,7 +124,7 @@ function Home({
           <div>
             <h2>Hi 👋 I am Swapnadeep Mohapatra! </h2>
             <Prargraph>
-              I&apos;m currently in my Second Year of B.Tech in CSE.
+              I&apos;m currently in my Third Year of B.Tech in CSE.
             </Prargraph>
             <Prargraph>I love to build awesome tech.</Prargraph>
             <Link href="/me" passHref>

@@ -18,7 +18,7 @@ function Application() {
           <Heading1>Thank you for coming here.</Heading1>
           <Heading2>A bit about me</Heading2>
           <Pragraph>
-            I am Swapnadeep Mohapatra. Currently, I am in my Second Year of B
+            I am Swapnadeep Mohapatra. Currently, I am in my Third Year of B
             Tech in CSE at KIIT University, Bhubaneswar. Apart from that I
             really love to write code and build awesome stuff.
           </Pragraph>
